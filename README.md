@@ -5,18 +5,18 @@
 ### To Do:
 
 #### General:
-- [ ] Accept invite to Apple Developer Account
+- [x] Accept invite to Apple Developer Account
 - [x] Update MacOS and XCODE
 - [ ] Create Icons for iOS
 - [ ] Create Splashscreen for iOS
 - [ ] Download and Install the NPM modules "ios-sim" and "ios-deploy"
 - [ ] Follow remaining steps from here: https://prof3ssorst3v3.github.io/mad9022/modules/week4/ios.html
-    * Certificates
-    * Provisioning Profiles
-    * Adding your own iOS Devices
-    * Set up XCode for Cordova
-    * Set up for iOS Deployment from Cordova
-    * After doing the above, read through sections: iOS Simulator Notes & Note About XCode 10 & Installation Problems with ios-sim and ios-deploy and reconfirm that everything is working
+    * [ ]Certificates
+    * [ ] Provisioning Profiles
+    * [ ] Adding your own iOS Devices
+    * [ ] Set up XCode for Cordova
+    * [ ] Set up for iOS Deployment from Cordova
+    * [ ] After doing the above, read through sections: iOS Simulator Notes & Note About XCode 10 & Installation Problems with ios-sim and ios-deploy and reconfirm that everything is working
 - [ ] ReWrite Reviews Module
 
 
@@ -53,3 +53,10 @@ $: cordova create reviewr com.algonquinlive.rach0022.reviewr Rach0022-Reviewr
 $: cordova platforms add ios
 $: cordova plugin add cordova-plugin-camera
 ```
+
+#### Commands to Remember:
+````bash
+> ios-sim showdevicetypes
+> ios-sim start --devicetypeid "device, version#fromabove"
+> cordova run ios
+````
