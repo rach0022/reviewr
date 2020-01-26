@@ -1,0 +1,13 @@
+{
+    "ios": {
+        "debug": {
+            "developmentTeam": "insertdevcodehere",
+            "packageType": "development",
+            "automaticProvisioning": true,
+            "buildFlag": [
+                "-UseModernBuildSystem=0"
+            ]
+        }
+    },
+    "android": {}
+}
