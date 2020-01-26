@@ -8,10 +8,14 @@
  *
  ***********************/
 
+ //import code to use module in browser taken form :https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
+import * as star_system from './reviews.js';
+
 const reviewr = {
     active: "home",
     pages: [],
     baseUrl: null,
+    stars: star_system,
 
     init: () => {
         reviewr.pages = document.querySelectorAll(".page");
@@ -38,6 +42,9 @@ const reviewr = {
 
         //handle the back button
         window.addEventListener('popstate', reviewr.backbutton)
+
+        //init events for other functionalities
+        reviewr.stars.starInit();
     },
 
     nav: ev => {

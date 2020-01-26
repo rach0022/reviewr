@@ -17,6 +17,7 @@
     * Set up XCode for Cordova
     * Set up for iOS Deployment from Cordova
     * After doing the above, read through sections: iOS Simulator Notes & Note About XCode 10 & Installation Problems with ios-sim and ios-deploy and reconfirm that everything is working
+- [ ] ReWrite Reviews Module
 
 
 
