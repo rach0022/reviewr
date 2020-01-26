@@ -9,14 +9,14 @@
 - [x] Update MacOS and XCODE
 - [ ] Create Icons for iOS
 - [ ] Create Splashscreen for iOS
-- [ ] Download and Install the NPM modules "ios-sim" and "ios-deploy"
+- [x] Download and Install the NPM modules "ios-sim" and "ios-deploy"
 - [ ] Follow remaining steps from here: https://prof3ssorst3v3.github.io/mad9022/modules/week4/ios.html
-    * [ ]Certificates
+    * [x] Certificates
     * [ ] Provisioning Profiles
-    * [ ] Adding your own iOS Devices
-    * [ ] Set up XCode for Cordova
-    * [ ] Set up for iOS Deployment from Cordova
-    * [ ] After doing the above, read through sections: iOS Simulator Notes & Note About XCode 10 & Installation Problems with ios-sim and ios-deploy and reconfirm that everything is working
+    * [x] Adding your own iOS Devices
+    * [x] Set up XCode for Cordova
+    * [x] Set up for iOS Deployment from Cordova
+    * [x] After doing the above, read through sections: iOS Simulator Notes & Note About XCode 10 & Installation Problems with ios-sim and ios-deploy and reconfirm that everything is working
 - [ ] ReWrite Reviews Module
 
 
