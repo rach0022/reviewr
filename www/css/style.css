@@ -1,3 +1,29 @@
+.star {
+  color: goldenrod;
+  font-size: 2.0rem;
+  padding: 0 1rem; }
+  .star::before {
+    content: '\2606';
+    cursor: pointer; }
+  .star:hover::before {
+    content: '\2605';
+    color: #FF0000; }
+  .star.rated::before {
+    content: '\2605'; }
+
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #E8ECEC;
+  background-color: #263242; }
+
 body {
   padding: 0;
   margin: 0;

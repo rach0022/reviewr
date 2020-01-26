@@ -9,13 +9,13 @@
  ***********************/
 
  //import code to use module in browser taken form :https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
-import * as star_system from './reviews.js';
+import * as stars from './stars.js';
 
 const reviewr = {
     active: "home",
     pages: [],
     baseUrl: null,
-    stars: star_system,
+    stars: stars,
 
     init: () => {
         reviewr.pages = document.querySelectorAll(".page");
