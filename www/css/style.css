@@ -62,7 +62,6 @@ main {
 #home {
   background-color: #ccebad; }
   #home figure {
-    z-index: 600;
     border: 2px solid #708396; }
     #home figure img {
       width: 200px;
@@ -73,5 +72,10 @@ main {
 
 #details {
   background-color: #add6eb; }
+  #details figure {
+    border: 2px solid #708396; }
+    #details figure img {
+      width: 200px;
+      height: auto; }
 
 /*# sourceMappingURL=style.css.map */
