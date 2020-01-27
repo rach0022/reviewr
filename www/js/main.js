@@ -84,6 +84,15 @@ const reviewr = {
         document.querySelector(`#${target}`).classList.add('active');
 
         //use a switch(target) to target page specific details
+        //since home is dynamically created we will readd the event listeners
+        switch(target){
+            default:
+                console.log(reviewr.appTextSource.error);
+                break;
+            case 'home':
+                console.log('this is the home page');
+                break;
+        }
     },
 
     backbutton: ev => {
@@ -138,10 +147,13 @@ const reviewr = {
             });
             //append the reviews div after being built to the home div
             home.appendChild(reviews);
+
+            //make sure to show the home page after it is built
+            reviewr.showPage('home');
         }
 
         //for now i need buttons to navigate to other pages so i am adding the links to their inner html
-        home.innerHTML += `<a href="#add-review" data-href="add-review">Reviews</a>
+        home.innerHTML += `<a href="#add-review" data-href="add-review">Add Review</a>
         <a href="#details" data-href="details">Details</a>`;
     },
 
@@ -157,14 +169,14 @@ const reviewr = {
         detail.innerHTML = "";
 
         //find the review based on the id using the arrow syntax and since it is one check we can do it on one line
-        let rev = reviewr.userReviews.find(entry => entry.id === id);
-
+        let rev = reviewr.userReviews.find(entry => entry.id == id);
+        console.log(rev);
         //if we find a review we will create and append all the elements to a figure and append that to the details div
         if(rev){
             let fig = document.createElement('figure');
             let img = document.createElement('img');
-            let title = document.createElement('.figcaption');
-            let date = document.createElement('.figcaption');
+            let title = document.createElement('figcaption');
+            let date = document.createElement('figcaption');
             let rating = document.createElement('div')
 
             img.src = rev.path;
@@ -176,9 +188,9 @@ const reviewr = {
             date.textContent = `${time.getFullYear()}:${(time.getMonth() + 1).toString().padStart(2,'0')}:${time.getDate().toString().padStart(2, '0')}`;
             
             //we use a for loop up to the rating number and add a *star* (currently numbers) to the div
-            for(let i = 0; i <= rev.rating; i++){
+            for(let i = 1; i <= rev.rating; i++){
                 let text = document.createElement('p');
-                parseInt.textContent = i.toString();
+                text.textContent = i.toString();
                 rating.appendChild(text);
             }
             fig.appendChild(img);
@@ -193,7 +205,7 @@ const reviewr = {
         }
 
         //for now i need buttons to navigate to other pages so i am adding the links to their inner html
-        detail.innerHTML += `<a href="#add-review" data-href="add-review">Reviews</a>
+        detail.innerHTML += `<a href="#add-review" data-href="add-review">Add Review</a>
         <a href="#details" data-href="details">Details</a>`;
 
         //show the page
