@@ -22,7 +22,8 @@
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
-
+        <!-- to make sure none of the pictures made for this app are backed up to icloud  -->
+        <preference name="BackupWebStorage" value="none" />
         <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
             <string> To Take Pictures for ReviewR App </string>
         </edit-config>

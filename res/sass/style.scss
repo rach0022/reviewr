@@ -57,10 +57,18 @@ main {
 //selectors for my pages home add-review and details
 
 #home{
-    background-color: hsl(90, 60%, 80%);;
+    background-color: hsl(90, 60%, 80%);
+    figure{
+        z-index: $active-z_index+ 500;
+        border: 2px solid $dark-accent;
+        img{
+            width: 200px;
+            height: auto;
+        }
+    }
 }
 #add-review{
-    background-color: hsl(60, 60%, 80%);;
+    background-color: hsl(60, 60%, 80%);
 }
 #details{
     background-color: hsl(200, 60%, 80%);
