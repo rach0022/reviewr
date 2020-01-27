@@ -92,6 +92,12 @@ const reviewr = {
             case 'home':
                 console.log('this is the home page');
                 break;
+            case 'details':
+                console.log('this is the detail page');
+                break;
+            case 'add-review':
+                console.log('this is the add review page');
+                break;
         }
     },
 
@@ -148,13 +154,24 @@ const reviewr = {
             //append the reviews div after being built to the home div
             home.appendChild(reviews);
 
-            //make sure to show the home page after it is built
+            //make sure to show the home page after it is built and add the listeners
             reviewr.showPage('home');
+            reviewr.homePageListeners(); //helper method call to add all the listeners to the new built items
         }
 
         //for now i need buttons to navigate to other pages so i am adding the links to their inner html
         home.innerHTML += `<a href="#add-review" data-href="add-review">Add Review</a>
         <a href="#details" data-href="details">Details</a>`;
+    },
+
+    //helper method to add the event listerners back to the home page:
+    homePageListeners: function(){
+        let figures = document.querySelectorAll('figure.review');
+        if(figures){
+            figures.forEach(fig => {
+                fig.addEventListener('click', reviewr.buildDetailPage);
+            })
+        }
     },
 
     //function to build the details page of a single review
@@ -205,7 +222,10 @@ const reviewr = {
         }
 
         //for now i need buttons to navigate to other pages so i am adding the links to their inner html
-        detail.innerHTML += `<a href="#add-review" data-href="add-review">Add Review</a>
+        //i am also setting the delete button to have the same id as the element building the detail page
+        //to allow easier targetting for deleting an entry
+        detail.innerHTML += `<button class="delete" id="${id}"><i class="fas fa-trash"></i></button>
+        <a href="#add-review" data-href="add-review">Add Review</a>
         <a href="#details" data-href="details">Details</a>`;
 
         //show the page
