@@ -41,7 +41,7 @@ const reviewr = {
         //create the session key for the phone based on the device:
         //set key based on device id
         reviewr.KEY = "device" in window ? "REVIEW" + device.uuid : "REVIEWTEMPKEY";
-        reviewr.mediaBaseUrl = "device" in window ? `/var/mobile/Applications/${device.uuid}/` : '';
+        reviewr.mediaBaseUrl = "device" in window ? `/var/mobile/Applications/${device.uuid}` : '';
         
         reviewr.pages = document.querySelectorAll(".page");
         let links = document.querySelectorAll("[data-href]");
@@ -201,7 +201,7 @@ const reviewr = {
         //to allow easier targetting for deleting an entry
         detail.innerHTML += `<button class="delete" id="${id}"><i class="fas fa-trash"></i></button>
         <a href="#add-review" data-href="add-review">Add Review</a>
-        <a href="#details" data-href="details">Details</a>`;
+        <a href="#home" data-href="home">Home</a>`;
 
         //find the review based on the id using the arrow syntax and since it is one check we can do it on one line
         let rev = reviewr.userReviews.find(entry => entry.id == id);
@@ -215,7 +215,7 @@ const reviewr = {
             let rating = document.createElement('div')
             rating.classList.add('rating');
 
-            img.src = reviewr.mediaBaseUrl +  rev.path;
+            img.src = reviewr.mediaBaseUrl + rev.path;
             img.alt = rev.title;
             title.textContent = rev.title;
 
