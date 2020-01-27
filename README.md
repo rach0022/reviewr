@@ -52,6 +52,8 @@
 $: cordova create reviewr com.algonquinlive.rach0022.reviewr Rach0022-Reviewr
 $: cordova platforms add ios
 $: cordova plugin add cordova-plugin-camera
+$: cordova plugin add cordova-plugin-device
+# $: cordova plugin add cordova-plugin-file
 ```
 
 #### Commands to Remember:

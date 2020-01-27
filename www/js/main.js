@@ -41,7 +41,7 @@ const reviewr = {
         //create the session key for the phone based on the device:
         //set key based on device id
         reviewr.KEY = "device" in window ? "REVIEW" + device.uuid : "REVIEWTEMPKEY";
-        reviewr.mediaBaseUrl = "device" in window ? `/var/mobile/Applications/${device.uuid}` : '';
+        reviewr.mediaBaseUrl = "device" in window ? `/var/mobile/Applications/${device.uuid}/Rach0022-Reviewr.app` : '';
         
         reviewr.pages = document.querySelectorAll(".page");
         let links = document.querySelectorAll("[data-href]");
@@ -191,7 +191,7 @@ const reviewr = {
         let id = ev.currentTarget.getAttribute('data-id');
         //show the page
         reviewr.navWithoutEvent('details');
-        console.log(reviewr.mediaBaseUrl);
+        // console.log(reviewr.mediaBaseUrl);
 
         //clear out any existing html in the detail div
         detail.innerHTML = "";
