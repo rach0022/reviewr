@@ -130,9 +130,9 @@ const reviewr = {
 
                 //create the elements for each review div
                 let figure = document.createElement('figure');
+                figure.addEventListener('click', reviewr.buildDetailPage);
                 figure.classList.add('review');
                 figure.setAttribute('data-id', rev.id);
-                figure.addEventListener('click', reviewr.buildDetailPage);
                 let title = document.createElement('figcaption');
                 let date = document.createElement('figcaption')
                 let img = document.createElement('img');
@@ -185,6 +185,7 @@ const reviewr = {
             let title = document.createElement('figcaption');
             let date = document.createElement('figcaption');
             let rating = document.createElement('div')
+            rating.classList.add('rating');
 
             img.src = rev.path;
             img.alt = rev.title;
@@ -197,7 +198,7 @@ const reviewr = {
             //we use a for loop up to the rating number and add a *star* (currently numbers) to the div
             for(let i = 1; i <= rev.rating; i++){
                 let text = document.createElement('p');
-                text.textContent = i.toString();
+                text.textContent = String.fromCharCode(0x2605);
                 rating.appendChild(text);
             }
             fig.appendChild(img);
