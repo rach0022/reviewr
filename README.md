@@ -22,8 +22,8 @@
 
 
 #### Home Page:
-- [ ] The home page for the app is a list which will show either a message saying that there are no reviews or a list of the names of the items that have been reviewed.
-- [ ] The list of reviews will be stored in localStorage as an Array of objects. Each item reviewed needs to be saved as an object like this:
+- [x] The home page for the app is a list which will show either a message saying that there are no reviews or a list of the names of the items that have been reviewed.
+- [x] The list of reviews will be stored in localStorage as an Array of objects. Each item reviewed needs to be saved as an object like this:
 ```json
 {
     "id": 134128716842,
