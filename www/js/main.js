@@ -65,8 +65,9 @@ const reviewr = {
             reviewr.showPage(reviewr.active);
         }
 
-        //handle the back button
+        //handle the back button and set all the other listeners
         window.addEventListener('popstate', reviewr.backbutton)
+        document.getElementById('fab').addEventListener('click', reviewr.takePhoto);
 
         //init events for other functionalities
         reviewr.stars.starInit();
@@ -239,7 +240,32 @@ const reviewr = {
             error.textContent = reviewr.appTextSource.error;
             detail.appendChild(error);
         }
+    },
+
+    //start of functions to take picutres
+    takePhoto : function(){
+        let options = {
+            quality: 80,
+            destinationType: Camera.DestinationType.FILE_URI,
+            sourceType: Camera.PictureSourceType.PHOTOLIBRARY, //for testing using photo library but should be Camera.PictureSourceType.Camera
+            mediaType: Camera.EncodingType.JPEG,
+            cameraDirection: Camera.Direction.BACK,
+            targetWidth: 500,
+            targetHeight: 500
+        };
+    
+        navigator.camera.getPicture(reviewr.cameraSuccess, reviewr.cameraFail, options);
+    },
+
+    cameraSuccess : imgURI => {
+        console.log(imgURI);
+        document.querySelector('img').src = imgURI;
+    },
+    
+    cameraFail : err => {
+        console.log(err);
     }
+
 };
 
 //copied from https://prof3ssorst3v3.github.io/mad9014/modules/week13/#domcontentloaded-vs-deviceready

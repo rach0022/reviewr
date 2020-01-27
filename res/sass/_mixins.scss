@@ -5,3 +5,9 @@
     justify-content: center;
     align-items: center;
 }
+
+@mixin circular-w-h($amount){
+    border-radius: 100%;
+    width: $amount;
+    height: $amount;
+}

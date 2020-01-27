@@ -50,7 +50,8 @@ main {
   font-size: 2rem;
   opacity: 0;
   z-index: 1;
-  transition: opacity 0.4s linear; }
+  transition: opacity 0.4s linear;
+  padding-top: 10vh; }
 
 .page:last-child {
   border: none; }
@@ -77,5 +78,15 @@ main {
     #details figure img {
       width: 200px;
       height: auto; }
+
+#fab {
+  font-size: 1.8em;
+  position: fixed;
+  top: 80vh;
+  left: 70vw;
+  z-index: 115;
+  border-radius: 100%;
+  width: 100px;
+  height: 100px; }
 
 /*# sourceMappingURL=style.css.map */

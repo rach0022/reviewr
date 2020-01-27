@@ -42,6 +42,7 @@ main {
     opacity: 0;
     z-index: 1;
     transition: opacity 0.4s linear;
+    padding-top: 10vh;
 }
 .page:last-child {
     border: none;
@@ -75,4 +76,14 @@ main {
             height: auto;
         }
     }
+}
+
+//selector for fab button at the bottom of the screen
+#fab{
+    font-size: 1.8em;
+    position: fixed;
+    top: 80vh;
+    left: 70vw;
+    z-index: $active-z_index + 15;
+    @include circular-w-h(100px);
 }
