@@ -15,6 +15,7 @@ const reviewr = {
     active: "home",
     pages: [],
     baseUrl: null,
+    mediaBaseUrl: null,
     stars: stars,
     userReviews: [
         {
@@ -24,6 +25,9 @@ const reviewr = {
             path: '/www/img/testphoto.png'
         }
     ],
+
+    //key variable used to connect back to the local storage
+    key: null,
     
     //this is an object holding all my string values for text for easy fixing
     appTextSource: {
@@ -33,6 +37,12 @@ const reviewr = {
     },
 
     init: () => {
+
+        //create the session key for the phone based on the device:
+        //set key based on device id
+        reviewr.KEY = "device" in window ? "REVIEW" + device.uuid : "REVIEWTEMPKEY";
+        reviewr.mediaBaseUrl = "device" in window ? `/var/mobile/Applications/${device.uuid}/` : '';
+        
         reviewr.pages = document.querySelectorAll(".page");
         let links = document.querySelectorAll("[data-href]");
 
@@ -79,26 +89,34 @@ const reviewr = {
         reviewr.showPage(target);
     },
 
+    //helper function to navigate to a new page without an event
+    navWithoutEvent: target => {
+        //update the url
+        history.pushState({}, target, `${reviewr.baseUrl}#${target}`);
+        //change the display of the "page"
+        reviewr.showPage(target);
+    },
+
     showPage: target => {
         document.querySelector('.active').classList.remove('active');
         document.querySelector(`#${target}`).classList.add('active');
 
-        //use a switch(target) to target page specific details
-        //since home is dynamically created we will readd the event listeners
-        switch(target){
-            default:
-                console.log(reviewr.appTextSource.error);
-                break;
-            case 'home':
-                console.log('this is the home page');
-                break;
-            case 'details':
-                console.log('this is the detail page');
-                break;
-            case 'add-review':
-                console.log('this is the add review page');
-                break;
-        }
+        // //use a switch(target) to target page specific details
+        // //since home is dynamically created we will readd the event listeners
+        // switch(target){
+        //     default:
+        //         console.log(reviewr.appTextSource.error);
+        //         break;
+        //     case 'home':
+        //         console.log('this is the home page');
+        //         break;
+        //     case 'details':
+        //         console.log('this is the detail page');
+        //         break;
+        //     case 'add-review':
+        //         console.log('this is the add review page');
+        //         break;
+        // }
     },
 
     backbutton: ev => {
@@ -119,6 +137,8 @@ const reviewr = {
         reviews.classList.add('reviews');
         //clear out the home div
         home.innerHTML = "";
+        home.innerHTML += `<a href="#add-review" data-href="add-review">Add Review</a>
+        <a href="#details" data-href="details">Details</a>`
 
         //check if there are any user reivews
         if(reviewr.userReviews.length === 0){
@@ -136,9 +156,9 @@ const reviewr = {
                 let title = document.createElement('figcaption');
                 let date = document.createElement('figcaption')
                 let img = document.createElement('img');
-
+                
                 //set the values on the elements
-                img.src = rev.path;
+                img.src = reviewr.mediaBaseUrl +  rev.path;
                 img.alt = `${rev.title}`;
                 title.textContent = rev.title;
                 //build the date as YYYY:MM:DD using pad start to make sure its always 2 digits for month and day
@@ -155,25 +175,33 @@ const reviewr = {
             home.appendChild(reviews);
 
             //make sure to show the home page after it is built and add the listeners
-            reviewr.showPage('home');
+            reviewr.navWithoutEvent('home');
             // reviewr.homePageListeners(); //helper method call to add all the listeners to the new built items (deleted)
         }
 
         //for now i need buttons to navigate to other pages so i am adding the links to their inner html
-        home.innerHTML += `<a href="#add-review" data-href="add-review">Add Review</a>
-        <a href="#details" data-href="details">Details</a>`;
+        // home.innerHTML += `<a href="#add-review" data-href="add-review">Add Review</a>
+        // <a href="#details" data-href="details">Details</a>`;
     },
 
     //function to build the details page of a single review
     //it will be passed an event object that will have the data-id attribute to link it to a reivew in the user reviews array
     buildDetailPage: ev => {
-        console.log('happens');
-
         let detail = document.getElementById('details');
         let id = ev.currentTarget.getAttribute('data-id');
+        //show the page
+        reviewr.navWithoutEvent('details');
+        console.log(reviewr.mediaBaseUrl);
 
         //clear out any existing html in the detail div
         detail.innerHTML = "";
+
+        //for now i need buttons to navigate to other pages so i am adding the links to their inner html
+        //i am also setting the delete button to have the same id as the element building the detail page
+        //to allow easier targetting for deleting an entry
+        detail.innerHTML += `<button class="delete" id="${id}"><i class="fas fa-trash"></i></button>
+        <a href="#add-review" data-href="add-review">Add Review</a>
+        <a href="#details" data-href="details">Details</a>`;
 
         //find the review based on the id using the arrow syntax and since it is one check we can do it on one line
         let rev = reviewr.userReviews.find(entry => entry.id == id);
@@ -187,7 +215,7 @@ const reviewr = {
             let rating = document.createElement('div')
             rating.classList.add('rating');
 
-            img.src = rev.path;
+            img.src = reviewr.mediaBaseUrl +  rev.path;
             img.alt = rev.title;
             title.textContent = rev.title;
 
@@ -211,17 +239,6 @@ const reviewr = {
             error.textContent = reviewr.appTextSource.error;
             detail.appendChild(error);
         }
-
-        //for now i need buttons to navigate to other pages so i am adding the links to their inner html
-        //i am also setting the delete button to have the same id as the element building the detail page
-        //to allow easier targetting for deleting an entry
-        detail.innerHTML += `<button class="delete" id="${id}"><i class="fas fa-trash"></i></button>
-        <a href="#add-review" data-href="add-review">Add Review</a>
-        <a href="#details" data-href="details">Details</a>`;
-
-        //show the page
-        reviewr.showPage('details');
-
     }
 };
 
