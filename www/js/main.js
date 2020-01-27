@@ -132,6 +132,7 @@ const reviewr = {
                 let figure = document.createElement('figure');
                 figure.classList.add('review');
                 figure.setAttribute('data-id', rev.id);
+                figure.addEventListener('click', reviewr.buildDetailPage);
                 let title = document.createElement('figcaption');
                 let date = document.createElement('figcaption')
                 let img = document.createElement('img');
@@ -148,7 +149,6 @@ const reviewr = {
                 figure.appendChild(img);
                 figure.appendChild(title);
                 figure.appendChild(date);
-                figure.addEventListener('click', reviewr.buildDetailPage);
                 reviews.appendChild(figure);
             });
             //append the reviews div after being built to the home div
@@ -156,22 +156,12 @@ const reviewr = {
 
             //make sure to show the home page after it is built and add the listeners
             reviewr.showPage('home');
-            reviewr.homePageListeners(); //helper method call to add all the listeners to the new built items
+            // reviewr.homePageListeners(); //helper method call to add all the listeners to the new built items (deleted)
         }
 
         //for now i need buttons to navigate to other pages so i am adding the links to their inner html
         home.innerHTML += `<a href="#add-review" data-href="add-review">Add Review</a>
         <a href="#details" data-href="details">Details</a>`;
-    },
-
-    //helper method to add the event listerners back to the home page:
-    homePageListeners: function(){
-        let figures = document.querySelectorAll('figure.review');
-        if(figures){
-            figures.forEach(fig => {
-                fig.addEventListener('click', reviewr.buildDetailPage);
-            })
-        }
     },
 
     //function to build the details page of a single review
