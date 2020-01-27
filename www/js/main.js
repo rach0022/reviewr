@@ -200,8 +200,7 @@ const reviewr = {
         //for now i need buttons to navigate to other pages so i am adding the links to their inner html
         //i am also setting the delete button to have the same id as the element building the detail page
         //to allow easier targetting for deleting an entry
-        detail.innerHTML += `<button class="delete" id="${id}"><i class="fas fa-trash"></i></button>
-        <a href="#add-review" data-href="add-review">Add Review</a>
+        detail.innerHTML += `<a href="#add-review" data-href="add-review">Add Review</a>
         <a href="#home" data-href="home">Home</a>`;
 
         //find the review based on the id using the arrow syntax and since it is one check we can do it on one line
@@ -230,16 +229,45 @@ const reviewr = {
                 text.textContent = String.fromCharCode(0x2605);
                 rating.appendChild(text);
             }
+
+            //now to build the delete button that will be placed under the figure
+            let del_button = document.createElement('button');
+            del_button.addEventListener('click', reviewr.deleteReview);
+            let icon = document.createElement('i');
+            icon.classList.add('fas', 'fa-trash');
+            icon.textContent = 'Delete';
+            del_button.setAttribute('data-id', id);
+
+            //append all of the elements in the proper order
             fig.appendChild(img);
             fig.appendChild(title);
             fig.appendChild(date);
             fig.appendChild(rating);
             detail.appendChild(fig);
+            
+            del_button.appendChild(icon);
+            detail.appendChild(del_button);
         } else {
             let error = document.createElement('p');
             error.textContent = reviewr.appTextSource.error;
             detail.appendChild(error);
         }
+    },
+
+    //start of functions to add reviews or delete reviews (starting with delete)
+    deleteReview: ev =>{
+
+        //first get the id from the button data-id attribute
+        //set index as whatever the id matches to in the usreREviews array
+        //for testing purposes we keep a reference to the removed item and console log it out
+        let id = ev.currentTarget.getAttribute('data-id');
+        let index = reviewr.userReviews.findIndex(rev => rev.id === id);
+        let removed = reviewr.userReviews.splice(index, 1);
+        console.log(removed);
+
+        //navigate back to the home page (without an event content)
+        reviewr.buildHomePage();
+        reviewr.navWithoutEvent('home');
     },
 
     //start of functions to take picutres
@@ -253,7 +281,6 @@ const reviewr = {
             targetWidth: 500,
             targetHeight: 500
         };
-    
         navigator.camera.getPicture(reviewr.cameraSuccess, reviewr.cameraFail, options);
     },
 
