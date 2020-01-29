@@ -7,7 +7,9 @@
 - [ ] create a div containing all the form elements needed to add a review (2 textfields, submit button and rating system)
 - [ ] push any new review object into the array
 - [ ] use localstorage.getitem() and localstorage.setitem() to save and reload the array of review json objects
+- [ ] to searlize the array use JSON.stringfy() and JSON.parse()
 - [ ] add a button to the add review page to allow the user to retake the photo
+- [ ] finish the css for the app
 
 #### General:
 - [x] Accept invite to Apple Developer Account
@@ -17,7 +19,7 @@
 - [x] Download and Install the NPM modules "ios-sim" and "ios-deploy"
 - [ ] Follow remaining steps from here: https://prof3ssorst3v3.github.io/mad9022/modules/week4/ios.html
     * [x] Certificates
-    * [ ] Provisioning Profiles
+    * [x] Provisioning Profiles
     * [x] Adding your own iOS Devices
     * [x] Set up XCode for Cordova
     * [x] Set up for iOS Deployment from Cordova
