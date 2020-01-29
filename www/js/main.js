@@ -27,13 +27,15 @@ const reviewr = {
     ],
 
     //key variable used to connect back to the local storage
-    key: null,
+    KEY: null,
     
     //this is an object holding all my string values for text for easy fixing
     appTextSource: {
         welcome: "You Havent Added any Photos, Click the Plus Arrow To Start Your Journey in Reviews",
         confirm: "Would You Like to Add Photo?",
-        error: "UhOh Something Funky is Happening, I'd Say start Running"
+        error: "UhOh Something Funky is Happening, I'd Say start Running",
+        retrievalIssue: "We are sorry, we could not recover your reviews at this time, click the add button to start adding new reviews",
+        storageIssue: "We are sorry, we have run out of room to save reviews. Try deleting some reviews before you add a new one."
     },
 
     init: () => {
@@ -268,6 +270,30 @@ const reviewr = {
         //navigate back to the home page (without an event content)
         reviewr.buildHomePage();
         reviewr.navWithoutEvent('home');
+    },
+
+    //start of functions to get and set the array to local storage:
+    getReviews: function(){
+        if(localStorage.getItem(reviewr.KEY)){
+            reviewr.userReviews = JSON.parse(localStorage.getItem(reviewr.KEY));
+        } else {
+            console.log(reviewr.appTextSource.retrievalIssue);
+        }
+        //add an else logic to it to give the user some error notifications
+    },
+
+    //this is the helper function to set the reviews array
+    //I will use try and catch logic to set the userReviews into local storage and if we get a warning
+    //we will tell the user we are running out of space so delete some reviews
+    setReviews: function(){
+        try{
+            let serialReviews = JSON.stringify(reviewr.userReviews);
+            localStorage.setItem(reviewr.KEY, serialReviews);
+        }
+        catch(err){
+            console.log(reviewr.appTextSource.storageIssue);
+            console.error(err);
+        }
     },
 
     //start of functions to take picutres
