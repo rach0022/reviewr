@@ -34,6 +34,8 @@
         <icon src="res/icon/ios/reviewr-icon-60@2x.png" width="120" height="120" />
         <icon src="res/icon/ios/reviewr-icon-72.png" width="72" height="72" />
         <icon src="res/icon/ios/reviewr-icon-72@2x.png" width="144" height="144" />
+        <icon src="res/icon/ios/reviewr-icon-80.png" width="80" height="80" />
+        <icon src="res/icon/ios/reviewr-icon-80@2x.png" width="160" height="160" />
     </platform>
     <plugin name="cordova-plugin-camera" spec="^4.1.0">
         <variable name="CAMERA_USAGE_DESCRIPTION" value="To take Pictures for your ReviewR entries" />
