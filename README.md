@@ -3,6 +3,11 @@
 ## Info at: https://prof3ssorst3v3.github.io/mad9022/assignments/cordova2.html
 
 ### To Do:
+#### Code:
+- [ ] create a div containing all the form elements needed to add a review (2 textfields, submit button and rating system)
+- [ ] push any new review object into the array
+- [ ] use localstorage.getitem() and localstorage.setitem() to save and reload the array of review json objects
+- [ ] add a button to the add review page to allow the user to retake the photo
 
 #### General:
 - [x] Accept invite to Apple Developer Account
