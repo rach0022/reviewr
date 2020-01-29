@@ -10,6 +10,7 @@
 - [x] to searlize the array use JSON.stringfy() and JSON.parse()
 - [ ] add a button to the add review page to allow the user to retake the photo
 - [ ] finish the css for the app
+- [ ] add an svg loader when saving to the array (display: none to display:block for an svg animation inside a div which we place with positioning absolute)
 
 #### General:
 - [x] Accept invite to Apple Developer Account
