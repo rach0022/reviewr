@@ -70,6 +70,7 @@ const reviewr = {
         //handle the back button and set all the other listeners
         window.addEventListener('popstate', reviewr.backbutton)
         document.getElementById('fab').addEventListener('click', reviewr.takePhoto);
+        document.getElementById('save').addEventListener('click', reviewr.submitReview);
 
         //init events for other functionalities
         reviewr.stars.starInit();
@@ -317,6 +318,27 @@ const reviewr = {
     
     cameraFail : err => {
         console.log(err);
+    },
+
+    //these are the functions to add a review to the array of reviews
+    //this is the submit review callback method that is ran when the user clicks save
+    //on the add review page
+    submitReview: ev =>{
+        //first stop the event from preforming default actions or prevent the event from bubbling
+        ev.preventDefault();
+        ev.stopPropagation();
+        //then get the id, title, rating and image src from the form submission
+        let id = Date.now();
+        let title = document.getElementById('title').value;
+        let rating = document.getElementById('stars').getAttribute('data-rating');
+        let path = document.getElementById('review-image').src; 
+
+        //now push a new object containing all these properties into the user Reviews Array
+        reviewr.userReviews.push({"id": id, "title": title, "rating": rating, "path": path});
+
+        //now time to rebuild and then show the home page
+        reviewr.buildHomePage();
+        reviewr.navWithoutEvent('home');
     }
 
 };
