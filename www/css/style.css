@@ -70,6 +70,17 @@ main {
 
 #add-review {
   background-color: #ebebad; }
+  #add-review form {
+    display: flex;
+    flex-direction: column; }
+    #add-review form img {
+      border-radius: 100%;
+      width: 200px;
+      height: 200px; }
+    #add-review form button {
+      border-radius: 100%;
+      width: 60px;
+      height: 60px; }
 
 #details {
   background-color: #add6eb; }

@@ -11,6 +11,7 @@
 - [ ] add a button to the add review page to allow the user to retake the photo
 - [ ] finish the css for the app
 - [ ] add an svg loader when saving to the array (display: none to display:block for an svg animation inside a div which we place with positioning absolute)
+- [ ] implement the navigator cleanup: navigator.camera.cleanup(successCallback, errorCallback);
 
 #### General:
 - [x] Accept invite to Apple Developer Account
@@ -61,7 +62,7 @@ $: cordova create reviewr com.algonquinlive.rach0022.reviewr Rach0022-Reviewr
 $: cordova platforms add ios
 $: cordova plugin add cordova-plugin-camera
 $: cordova plugin add cordova-plugin-device
-# $: cordova plugin add cordova-plugin-file
+# $: cordova plugin add cordova-plugin-file (consider adding this at a later time once code supports it)
 ```
 
 #### Commands to Remember:
@@ -69,4 +70,5 @@ $: cordova plugin add cordova-plugin-device
 > ios-sim showdevicetypes
 > ios-sim start --devicetypeid "device, version#fromabove"
 > cordova run ios
+> cordova run ios --target="IPHONE<#>,version"
 ````

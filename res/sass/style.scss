@@ -66,6 +66,16 @@ main {
 }
 #add-review{
     background-color: hsl(60, 60%, 80%);
+    form{
+        display: flex;
+        flex-direction: column;
+        img{
+            @include circular-w-h(200px);
+        }
+        button{
+            @include circular-w-h(60px);
+        }
+    }
 }
 #details{
     background-color: hsl(200, 60%, 80%);
