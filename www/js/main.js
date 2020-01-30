@@ -136,6 +136,9 @@ const reviewr = {
     //reviews(div)>review(figure)*userReviewslength>img+figcation
     //these will be made in the #home div
     buildHomePage: function() {
+
+        //first we will load in the reviews from local storage
+        reviewr.getReviews();
         let home = document.getElementById('home');
         let reviews = document.createElement('div');
         reviews.classList.add('reviews');
@@ -335,6 +338,9 @@ const reviewr = {
 
         //now push a new object containing all these properties into the user Reviews Array
         reviewr.userReviews.push({"id": id, "title": title, "rating": rating, "path": path});
+
+        //then write the reviews into local storage
+        reviewr.setReviews();
 
         //now time to rebuild and then show the home page
         reviewr.buildHomePage();

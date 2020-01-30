@@ -4,8 +4,9 @@
 
 ### To Do:
 #### Code:
-- [ ] create a div containing all the form elements needed to add a review (2 textfields, submit button and rating system)
-- [ ] push any new review object into the array
+- [ ] after clicking the photo button the user should be brought to the add review page with the image taken populating the form
+- [x] create a div containing all the form elements needed to add a review (1 textfields, submit button and rating system)
+- [x] push any new review object into the array
 - [x] use localstorage.getitem() and localstorage.setitem() to save and reload the array of review json objects
 - [x] to searlize the array use JSON.stringfy() and JSON.parse()
 - [ ] add a button to the add review page to allow the user to retake the photo
