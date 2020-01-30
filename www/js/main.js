@@ -1,10 +1,10 @@
 /*************************
  *
- *  @description Android media player app called REVIEWR built using Cordova
+ *  @description Iphone camera app called REVIEWR built using Cordova
  *
  *  @author Ravi Chandra Rachamalla rach0022@algonquinlive.com
  *
- *  @version Jan 26, 2020
+ *  @version Jan 29, 2020
  *
  ***********************/
 
@@ -271,6 +271,10 @@ const reviewr = {
         let removed = reviewr.userReviews.splice(index, 1);
         console.log(removed);
 
+        //now set the new reviews array in local storage to overwrite the previous
+        //entry that contained the deleted item
+        reviewr.setReviews();
+
         //navigate back to the home page (without an event content)
         reviewr.buildHomePage();
         reviewr.navWithoutEvent('home');
@@ -300,7 +304,11 @@ const reviewr = {
         }
     },
 
-    //start of functions to take picutres
+    //start of functions to take pictures
+    //while testing we have set the source type to photo library
+    //options is an object that has all the specifications for the cordova camera module to function
+    //then after setting the options we use the getpicture() method with callback references
+    //to process the image data
     takePhoto : function(){
         let options = {
             quality: 80,
@@ -314,6 +322,10 @@ const reviewr = {
         navigator.camera.getPicture(reviewr.cameraSuccess, reviewr.cameraFail, options);
     },
 
+    //the camera success function is passed the image URI from the takePhoto() function above
+    //we will take this uri and set it as the image src on the review page
+    //and we will then move the user to the add review page where they can add details about
+    //the item they are removing and then it will get saved to the array (and then to local storage)
     cameraSuccess : imgURI => {
         console.log(imgURI);
         document.querySelector('img').src = imgURI;
