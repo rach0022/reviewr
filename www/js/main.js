@@ -43,7 +43,7 @@ const reviewr = {
         //create the session key for the phone based on the device:
         //set key based on device id
         reviewr.KEY = "device" in window ? "REVIEW" + device.uuid : "REVIEWTEMPKEY";
-        reviewr.mediaBaseUrl = "device" in window ? `/var/mobile/Applications/${device.uuid}/Rach0022-Reviewr.app` : '';
+        // reviewr.mediaBaseUrl = "device" in window ? `/var/mobile/Applications/${device.uuid}/Rach0022-Reviewr.app` : '';
         
         reviewr.pages = document.querySelectorAll(".page");
         let links = document.querySelectorAll("[data-href]");
@@ -328,7 +328,13 @@ const reviewr = {
     //the item they are removing and then it will get saved to the array (and then to local storage)
     cameraSuccess : imgURI => {
         console.log(imgURI);
-        document.querySelector('img').src = imgURI;
+        //reset the form values first before we actually change the form
+        document.querySelector('form').reset();
+        document.getElementById('review-image').src = imgURI;
+
+        //then navigate to the add review page
+        reviewr.navWithoutEvent('add-review');
+
     },
     
     cameraFail : err => {

@@ -4,7 +4,8 @@
 
 ### To Do:
 #### Code:
-- [ ] after clicking the photo button the user should be brought to the add review page with the image taken populating the form
+- [x] after clicking the photo button the user should be brought to the add review page with the image taken populating the form
+- [ ] find out why after taking an image and saving it into the array it will not give the proper path
 - [x] create a div containing all the form elements needed to add a review (1 textfields, submit button and rating system)
 - [x] push any new review object into the array
 - [x] use localstorage.getitem() and localstorage.setitem() to save and reload the array of review json objects
