@@ -3,6 +3,10 @@
 ## Info at: https://prof3ssorst3v3.github.io/mad9022/assignments/cordova2.html
 
 ### To Do:
+
+#### Bugs to Fix:
+- [ ] Find out why I cant reload the old images after uninstalling and reinstalling the app (the locations might just be removed but lets make sure there if there is something I can do)
+
 #### Code:
 - [x] after clicking the photo button the user should be brought to the add review page with the image taken populating the form
 - [ ] find out why after taking an image and saving it into the array it will not give the proper path
