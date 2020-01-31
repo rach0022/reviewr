@@ -333,6 +333,8 @@ const reviewr = {
         //reset the form values first before we actually change the form
         document.querySelector('form').reset();
         document.getElementById('review-image').src = imgURI;
+        console.log("uri:", imgURI);
+        console.log("imgsrc:", document.getElementById('review-image').src);
 
         //then navigate to the add review page
         reviewr.navWithoutEvent('add-review');
