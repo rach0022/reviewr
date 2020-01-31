@@ -51,7 +51,8 @@ main {
   opacity: 0;
   z-index: 1;
   transition: opacity 0.4s linear;
-  padding-top: 10vh; }
+  padding-top: 10vh;
+  overflow-y: hidden; }
 
 .page:last-child {
   border: none; }

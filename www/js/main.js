@@ -70,6 +70,7 @@ const reviewr = {
         window.addEventListener('popstate', reviewr.backbutton)
         document.getElementById('fab').addEventListener('click', reviewr.takePhoto);
         document.getElementById('save').addEventListener('click', reviewr.submitReview);
+        document.getElementById('cancel').addEventListener('click', reviewr.cancelReview);
 
         //init events for other functionalities
         reviewr.stars.starInit();
@@ -101,6 +102,7 @@ const reviewr = {
     },
 
     showPage: target => {
+        window.scrollTo(0,0);
         document.querySelector('.active').classList.remove('active');
         document.querySelector(`#${target}`).classList.add('active');
 
@@ -143,8 +145,8 @@ const reviewr = {
         reviews.classList.add('reviews');
         //clear out the home div
         home.innerHTML = "";
-        home.innerHTML += `<a href="#add-review" data-href="add-review">Add Review</a>
-        <a href="#details" data-href="details">Details</a>`
+        // home.innerHTML += `<a href="#add-review" data-href="add-review">Add Review</a>
+        // <a href="#details" data-href="details">Details</a>`
 
         //check if there are any user reivews
         if(reviewr.userReviews.length === 0){
@@ -205,8 +207,8 @@ const reviewr = {
         //for now i need buttons to navigate to other pages so i am adding the links to their inner html
         //i am also setting the delete button to have the same id as the element building the detail page
         //to allow easier targetting for deleting an entry
-        detail.innerHTML += `<a href="#add-review" data-href="add-review">Add Review</a>
-        <a href="#home" data-href="home">Home</a>`;
+        // detail.innerHTML += `<a href="#add-review" data-href="add-review">Add Review</a>
+        // <a href="#home" data-href="home">Home</a>`;
 
         //find the review based on the id using the arrow syntax and since it is one check we can do it on one line
         let rev = reviewr.userReviews.find(entry => entry.id == id);
@@ -360,6 +362,20 @@ const reviewr = {
         reviewr.setReviews();
 
         //now time to rebuild and then show the home page
+        reviewr.buildHomePage();
+        reviewr.navWithoutEvent('home');
+    },
+
+    //this is the cancel review callback function for the cancel button on the review page
+    cancelReview: ev =>{
+
+        //first stop theevents from proceeding as normal and or bubble
+        ev.preventDefault();
+        ev.stopPropagation();
+
+        //then bring the user back to the home page
+        //since we havent added anything to the array and if we want the user to be able to go back we
+        //shouldnt do anything special
         reviewr.buildHomePage();
         reviewr.navWithoutEvent('home');
     }
