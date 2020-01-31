@@ -2,6 +2,11 @@
 @import 'mixins';
 @import 'review.scss';
 
+
+//default selector for all styles:
+*{
+    color: $light-shade;
+}
 //header selector for the top bar
 header{
     width: 100%;
@@ -44,6 +49,10 @@ main {
     transition: opacity 0.4s linear;
     padding-top: 10vh;
     overflow-y: hidden;
+
+    //default background color for all pages:
+    background-color: $dark-accent;
+
 }
 .page:last-child {
     border: none;
@@ -56,7 +65,6 @@ main {
 //selectors for my pages home add-review and details
 
 #home{
-    background-color: hsl(90, 60%, 80%);
     figure{
         border: 2px solid $dark-accent;
         img{
@@ -64,9 +72,11 @@ main {
             height: auto;
         }
     }
+    .empty-reviews{
+        text-align: center;
+    }
 }
 #add-review{
-    background-color: hsl(60, 60%, 80%);
     form{
         display: flex;
         flex-direction: column;
@@ -76,10 +86,16 @@ main {
         button{
             @include circular-w-h(60px);
         }
+        input{
+            background-color: transparent;
+            border: none;
+            border-radius: 0;
+            color: $dark-shade;
+            border-bottom: 2px solid $dark-shade;
+        }
     }
 }
 #details{
-    background-color: hsl(200, 60%, 80%);
     figure{
         border: 2px solid $dark-accent;
         img{
@@ -97,4 +113,5 @@ main {
     left: 70vw;
     z-index: $active-z_index + 15;
     @include circular-w-h(100px);
+    background-color: $brand-color;
 }

@@ -11,6 +11,9 @@
   .star.rated::before {
     content: '\2605'; }
 
+* {
+  color: #E8ECEC; }
+
 header {
   width: 100%;
   position: fixed;
@@ -52,7 +55,8 @@ main {
   z-index: 1;
   transition: opacity 0.4s linear;
   padding-top: 10vh;
-  overflow-y: hidden; }
+  overflow-y: hidden;
+  background-color: #708396; }
 
 .page:last-child {
   border: none; }
@@ -61,35 +65,37 @@ main {
   opacity: 1;
   z-index: 100; }
 
-#home {
-  background-color: #ccebad; }
-  #home figure {
-    border: 2px solid #708396; }
-    #home figure img {
-      width: 200px;
-      height: auto; }
+#home figure {
+  border: 2px solid #708396; }
+  #home figure img {
+    width: 200px;
+    height: auto; }
+#home .empty-reviews {
+  text-align: center; }
 
-#add-review {
-  background-color: #ebebad; }
-  #add-review form {
-    display: flex;
-    flex-direction: column; }
-    #add-review form img {
-      border-radius: 100%;
-      width: 200px;
-      height: 200px; }
-    #add-review form button {
-      border-radius: 100%;
-      width: 60px;
-      height: 60px; }
+#add-review form {
+  display: flex;
+  flex-direction: column; }
+  #add-review form img {
+    border-radius: 100%;
+    width: 200px;
+    height: 200px; }
+  #add-review form button {
+    border-radius: 100%;
+    width: 60px;
+    height: 60px; }
+  #add-review form input {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    color: #263242;
+    border-bottom: 2px solid #263242; }
 
-#details {
-  background-color: #add6eb; }
-  #details figure {
-    border: 2px solid #708396; }
-    #details figure img {
-      width: 200px;
-      height: auto; }
+#details figure {
+  border: 2px solid #708396; }
+  #details figure img {
+    width: 200px;
+    height: auto; }
 
 #fab {
   font-size: 1.8em;
@@ -99,6 +105,7 @@ main {
   z-index: 115;
   border-radius: 100%;
   width: 100px;
-  height: 100px; }
+  height: 100px;
+  background-color: #547D87; }
 
 /*# sourceMappingURL=style.css.map */
