@@ -1,5 +1,5 @@
 .star {
-  color: goldenrod;
+  color: #263242;
   font-size: 2.0rem;
   padding: 0 1rem; }
   .star::before {
@@ -7,7 +7,7 @@
     cursor: pointer; }
   .star:hover::before {
     content: '\2605';
-    color: #FF0000; }
+    color: #263242; }
   .star.rated::before {
     content: '\2605'; }
 
@@ -75,7 +75,9 @@ main {
 
 #add-review form {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
   #add-review form img {
     border-radius: 100%;
     width: 200px;

@@ -78,8 +78,7 @@ main {
 }
 #add-review{
     form{
-        display: flex;
-        flex-direction: column;
+        @include center(column);
         img{
             @include circular-w-h(200px);
         }

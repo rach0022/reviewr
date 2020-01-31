@@ -5,8 +5,8 @@ $brand-color: #547D87;
 $dark-accent: #708396;
 $dark-shade: #263242;
 
-$star-colour: goldenrod;
-$star-hover: #FF0000;
+$star-colour: $dark-shade;
+$star-hover: $dark-shade;
 
 
 //variable for the zindex so i can keep track of everything using zindex
