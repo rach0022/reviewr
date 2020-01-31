@@ -151,6 +151,7 @@ const reviewr = {
         //check if there are any user reivews
         if(reviewr.userReviews.length === 0){
             let intro = document.createElement('p');
+            intro.classList.add('empty-reviews');
             intro.textContent = reviewr.appTextSource.welcome;
             home.appendChild(intro);
         } else {
