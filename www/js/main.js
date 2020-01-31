@@ -15,7 +15,6 @@ const reviewr = {
     active: "home",
     pages: [],
     baseUrl: null,
-    mediaBaseUrl: null,
     stars: stars,
     userReviews: [
         {
@@ -165,7 +164,7 @@ const reviewr = {
                 let img = document.createElement('img');
                 
                 //set the values on the elements
-                img.src = reviewr.mediaBaseUrl +  rev.path;
+                img.src = rev.path;
                 img.alt = `${rev.title}`;
                 title.textContent = rev.title;
                 //build the date as YYYY:MM:DD using pad start to make sure its always 2 digits for month and day
@@ -221,7 +220,7 @@ const reviewr = {
             let rating = document.createElement('div')
             rating.classList.add('rating');
 
-            img.src = reviewr.mediaBaseUrl + rev.path;
+            img.src = rev.path;
             img.alt = rev.title;
             title.textContent = rev.title;
 
