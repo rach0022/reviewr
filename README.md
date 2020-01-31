@@ -5,7 +5,7 @@
 ### To Do:
 
 #### Bugs to Fix:
-- [ ] Find out why I cant reload the old images after uninstalling and reinstalling the app (the locations might just be removed but lets make sure there if there is something I can do)
+- [x] Find out why I cant reload the old images after uninstalling and reinstalling the app (the locations might just be removed but lets make sure if there is something I can do)
 
 #### Code:
 - [x] after clicking the photo button the user should be brought to the add review page with the image taken populating the form
@@ -47,8 +47,8 @@
     "img": "path/on/phone/to/image"
 }
 ```
-- [ ] Use the current timestamp when taking the picture as the id for each item.
-- [ ] Clicking on any of the titles will take you to the details page and show the image, title, and rating for the reviewed item.
+- [x] Use the current timestamp when taking the picture as the id for each item.
+- [x] Clicking on any of the titles will take you to the details page and show the image, title, and rating for the reviewed item.
 - [ ] The home page needs a button in the top bar to add new reviews by taking the user to the Add Page. Follow the Apple HIG when designing and placing this button.
 
 #### Details Page:
@@ -60,7 +60,7 @@
 #### Add Page: 
 - [ ] The Add Page should show a button to take the picture. This should always be the first step on this page. Do not show the input or prompt for the title until after the picture is taken.
 - [x] After the picture is taken and displayed (on a canvas or img element) then show the input field for the title and some type of input for the rating (number input or star system).
-- [ ] After the picture is taken there should also be a save and a cancel button. The save button will also update localStorage adding the new item. Both buttons will take the user back to the home page.
+- [x] After the picture is taken there should also be a save and a cancel button. The save button will also update localStorage adding the new item. Both buttons will take the user back to the home page.
 
 #### Installation Instructions:
 ```bash
