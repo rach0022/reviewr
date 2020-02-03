@@ -107,22 +107,25 @@ const reviewr = {
         document.querySelector('.active').classList.remove('active');
         document.querySelector(`#${target}`).classList.add('active');
 
-        // //use a switch(target) to target page specific details
-        // //since home is dynamically created we will readd the event listeners
-        // switch(target){
-        //     default:
-        //         console.log(reviewr.appTextSource.error);
-        //         break;
-        //     case 'home':
-        //         console.log('this is the home page');
-        //         break;
-        //     case 'details':
-        //         console.log('this is the detail page');
-        //         break;
-        //     case 'add-review':
-        //         console.log('this is the add review page');
-        //         break;
-        // }
+        //use a switch(target) to target page specific details
+        //since we need to change the top bar to include a button on details to go back lets add a button or delete it
+        switch(target){
+            default:
+                console.log(reviewr.appTextSource.error);
+                break;
+            case 'home':
+                reviewr.updateTopBar(1);
+                console.log('this is the home page');
+                break;
+            case 'details':
+                reviewr.updateTopBar(null);
+                console.log('this is the detail page');
+                break;
+            case 'add-review':
+                reviewr.updateTopBar(1);
+                console.log('this is the add review page');
+                break;
+        }
     },
 
     backbutton: ev => {
@@ -247,14 +250,14 @@ const reviewr = {
             icon.textContent = 'Delete';
             del_button.setAttribute('data-id', id);
 
-            //also time to build the back button for the home page
-            let home_button = document.createElement('button');
-            home_button.classList.add('gohome');
-            home_button.addEventListener('click', reviewr.navBackToHome);
-            //build the icon to go into the home button
-            let home_icon = document.createElement('i');
-            home_icon.classList.add('fas','fa-home');
-            home_icon.textContent = "HOME";
+            // //also time to build the back button for the home page
+            // let home_button = document.createElement('button');
+            // home_button.classList.add('gohome');
+            // home_button.addEventListener('click', reviewr.navBackToHome);
+            // //build the icon to go into the home button
+            // let home_icon = document.createElement('i');
+            // home_icon.classList.add('fas','fa-home');
+            // home_icon.textContent = "HOME";
             
 
             //append all of the elements in the proper order
@@ -263,9 +266,10 @@ const reviewr = {
             fig.appendChild(date);
             fig.appendChild(rating);
             
+            //append all the elements in the appropirate order
             //i want the home button on the top so for now append to top of details then figure then delete button
-            home_button.appendChild(home_icon);
-            detail.appendChild(home_button);
+            // home_button.appendChild(home_icon);
+            // detail.appendChild(home_button);
             detail.appendChild(fig);
             del_button.appendChild(icon);
             detail.appendChild(del_button);
@@ -406,6 +410,41 @@ const reviewr = {
 
         reviewr.buildHomePage();
         reviewr.navWithoutEvent('home');
+    },
+
+    //update top bar helper function to change the top bar depending on if we want a home button or not
+    //will take a true or falsy value to see if we want a home button or not
+    updateTopBar: ifHome =>{
+        if(ifHome){
+            //reset the top bar to just say the title
+            let appHeader = document.querySelector('header')
+            appHeader.innerHTML = "";
+            appHeader.innerHTML = `<h2><i class="fas fa-camera-retro"></i> REVIEWR by <em>RACH0022</em></h2>`;
+        } else {
+            //first clear the top bar
+            let appHeader = document.querySelector('header')
+            appHeader.innerHTML = "";
+
+            //then create a button and add that to the header and then append the h2 with the proper text to the top bar
+            let homeBtn = document.createElement('button');
+            homeBtn.classList.add('gohome')
+            let icon = document.createElement('i');
+            let headerText = document.createElement('h2');
+            let italicText = document.createElement('em');
+            italicText.textContent = 'RACH0022';
+            headerText.textContent= `REVIEWR by `;
+
+            icon.classList.add('fas', 'fa-home');
+
+            //now to append the elements properly
+            headerText.appendChild(italicText);
+            homeBtn.appendChild(icon);
+            appHeader.appendChild(homeBtn);
+            appHeader.appendChild(headerText);
+
+
+            homeBtn.addEventListener('click', reviewr.navBackToHome);
+        }
     }
 
 };

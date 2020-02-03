@@ -16,6 +16,7 @@
 
 header {
   width: 100%;
+  min-height: 65px;
   position: fixed;
   top: 0;
   left: 0;
@@ -26,6 +27,9 @@ header {
   align-items: center;
   color: #E8ECEC;
   background-color: #263242; }
+  header .gohome {
+    position: absolute;
+    left: 3vw; }
 
 body {
   padding: 0;

@@ -7,6 +7,7 @@
 #### Bugs to Fix:
 - [ ] Use Cordova file plugin to save the images to be reloaded at a later time
 - [ ] Fix cordova splashscreen delay, will autohide isntantly instead of displaying for 5 seconds
+- [ ] see why there is content behind the top bar when not on the details page, everything should be cleared out but it seems there are still elements remaining
 
 #### Code:
 - [ ] move home button to top bar of the app on the details page (use the case switch to rewrite the button at the top depending on which page user navs to)
@@ -51,7 +52,8 @@
 ```
 - [x] Use the current timestamp when taking the picture as the id for each item.
 - [x] Clicking on any of the titles will take you to the details page and show the image, title, and rating for the reviewed item.
-- [ ] The home page needs a button in the top bar to add new reviews by taking the user to the Add Page. Follow the Apple HIG when designing and placing this button. (button currently on the bottom, move to the top)
+- [x] The home page needs a button in the top bar to add new reviews by taking the user to the Add Page. 
+    - [ ] Follow the Apple HIG when designing and placing this button. (button currently on the bottom, move to the top)
 
 #### Details Page:
 - [x] The image should fill the whole width of the container. The title should be a label for the thing in the picture being reviewed. Use a figure, figcaption, and img element for the picture and title.
