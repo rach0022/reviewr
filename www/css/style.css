@@ -66,6 +66,10 @@ main {
   z-index: 100; }
 
 #home figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border: 2px solid #708396; }
   #home figure img {
     width: 200px;
@@ -99,6 +103,13 @@ main {
   #details figure img {
     width: 100%;
     height: auto; }
+  #details figure .rating {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; }
+    #details figure .rating p {
+      padding: 0.5em; }
 
 #fab {
   font-size: 1.8em;

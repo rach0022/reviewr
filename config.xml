@@ -38,6 +38,21 @@
         <splash src="res/screen/ios/reviewr_splash-default-landscape@2x.png" width="2048" height="1536"/>
         <splash src="res/screen/ios/reviewr_splash-default-landscape@3x.png" width="3072" height="2304"/>
 
+        <splash src="res/screen/ios/reviewr_splash-default-667h.png" width="750" height="1334"/>
+        <splash src="res/screen/ios/reviewr_splash-default-667h@2x.png" width="1500" height="2668"/>
+        <splash src="res/screen/ios/reviewr_splash-default-667h@3x.png" width="2250" height="4002"/>
+        <splash src="res/screen/ios/reviewr_splash-default-667h-landscape.png" width="1334" height="750"/>
+        <splash src="res/screen/ios/reviewr_splash-default-667h-landscape@2x.png" width="2668" height="1500"/>
+        <splash src="res/screen/ios/reviewr_splash-default-667h-landscape@3x.png" width="4002" height="2250"/>
+
+        <splash src="res/screen/ios/reviewr_splash-default-736h.png" width="1242" height="2208"/>
+        <splash src="res/screen/ios/reviewr_splash-default-736h@2x.png" width="2484" height="2668"/>
+        <splash src="res/screen/ios/reviewr_splash-default-736h@3x.png" width="3726" height="6624"/>
+        <splash src="res/screen/ios/reviewr_splash-default-736h-landscape.png" width="2208" height="1242"/>
+        <splash src="res/screen/ios/reviewr_splash-default-736h-landscape@2x.png" width="2668" height="2484"/>
+        <splash src="res/screen/ios/reviewr_splash-default-736h-landscape@3x.png" width="6624" height="3726"/>
+        <preference name="SplashScreenDelay" value="10000" />
+
 
         <!-- start of icon definitions  -->
         <icon src="res/icon/ios/reviewr-icon-40.png" width="40" height="40" />
