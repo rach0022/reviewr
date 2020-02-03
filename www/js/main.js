@@ -43,6 +43,12 @@ const reviewr = {
         //set key based on device id
         reviewr.KEY = "device" in window ? "REVIEW" + device.uuid : "REVIEWTEMPKEY";
         // reviewr.mediaBaseUrl = "device" in window ? `/var/mobile/Applications/${device.uuid}/Rach0022-Reviewr.app` : '';
+        // if (reviewr.KEY.length < 15){
+        //     //hide the splashscreen after 5 seconds
+        //     setTimeout(function() {
+        //         navigator.splashscreen.hide();
+        //     }, 5000);   
+        // }
         
         reviewr.pages = document.querySelectorAll(".page");
         let links = document.querySelectorAll("[data-href]");
