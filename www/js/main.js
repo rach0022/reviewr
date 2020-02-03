@@ -247,15 +247,29 @@ const reviewr = {
             icon.textContent = 'Delete';
             del_button.setAttribute('data-id', id);
 
+            //also time to build the back button for the home page
+            let home_button = document.createElement('button');
+            home_button.classList.add('gohome');
+            home_button.addEventListener('click', reviewr.navBackToHome);
+            //build the icon to go into the home button
+            let home_icon = document.createElement('i');
+            home_icon.classList.add('fas','fa-home');
+            home_icon.textContent = "HOME";
+            
+
             //append all of the elements in the proper order
             fig.appendChild(img);
             fig.appendChild(title);
             fig.appendChild(date);
             fig.appendChild(rating);
-            detail.appendChild(fig);
             
+            //i want the home button on the top so for now append to top of details then figure then delete button
+            home_button.appendChild(home_icon);
+            detail.appendChild(home_button);
+            detail.appendChild(fig);
             del_button.appendChild(icon);
             detail.appendChild(del_button);
+            
         } else {
             let error = document.createElement('p');
             error.textContent = reviewr.appTextSource.error;
@@ -380,6 +394,16 @@ const reviewr = {
         //then bring the user back to the home page
         //since we havent added anything to the array and if we want the user to be able to go back we
         //shouldnt do anything special
+        reviewr.buildHomePage();
+        reviewr.navWithoutEvent('home');
+    },
+
+    //this is the callback function for the click event to navigate back to the 
+    //homescreen from clicing a button in the top bar
+    navBackToHome: ev =>{
+        ev.preventDefault();
+        ev.stopPropagation();
+
         reviewr.buildHomePage();
         reviewr.navWithoutEvent('home');
     }

@@ -8,13 +8,14 @@
 - [ ] Use Cordova file plugin to save the images to be reloaded at a later time
 
 #### Code:
+- [ ] move home button to top bar of the app on the details page (use the case switch to rewrite the button at the top depending on which page user navs to)
 - [x] after clicking the photo button the user should be brought to the add review page with the image taken populating the form
 - [x] find out why after taking an image and saving it into the array it will not give the proper path
 - [x] create a div containing all the form elements needed to add a review (1 textfields, submit button and rating system)
 - [x] push any new review object into the array
 - [x] use localstorage.getitem() and localstorage.setitem() to save and reload the array of review json objects
 - [x] to searlize the array use JSON.stringfy() and JSON.parse()
-- [ ] add a button to the add review page to allow the user to retake the photo
+- [x] add a button to the add review page to allow the user to retake the photo
 - [ ] finish the css for the app
 - [ ] add an svg loader when saving to the array (display: none to display:block for an svg animation inside a div which we place with positioning absolute)
 - [ ] implement the navigator cleanup: navigator.camera.cleanup(successCallback, errorCallback);
@@ -23,7 +24,7 @@
 - [x] Accept invite to Apple Developer Account
 - [x] Update MacOS and XCODE
 - [x] Create Icons for iOS
-- [ ] Create Splashscreen for iOS
+- [x] Create Splashscreen for iOS
 - [x] Download and Install the NPM modules "ios-sim" and "ios-deploy"
 - [x] Follow remaining steps from here: https://prof3ssorst3v3.github.io/mad9022/modules/week4/ios.html
     * [x] Certificates
@@ -55,7 +56,7 @@
 - [x] The image should fill the whole width of the container. The title should be a label for the thing in the picture being reviewed. Use a figure, figcaption, and img element for the picture and title.
 - [x] The rating system needs to be a number between 1 and 5 OR a star rating system displaying 1 to 5 stars. See the video link below as an example for how to create the rating system.
 - [x] There needs to be a delete button which will remove the data from localstorage and return the user to the home page.
-- [ ] There also needs to be a button in the top bar for the user to navigate back to the home screen.
+- [x] There also needs to be a button in the top bar for the user to navigate back to the home screen.
 
 #### Add Page: 
 - [x] The Add Page should show a button to take the picture. This should always be the first step on this page. Do not show the input or prompt for the title until after the picture is taken. (skipped button, made it go directly to camera)
