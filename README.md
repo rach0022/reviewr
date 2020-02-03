@@ -6,6 +6,7 @@
 
 #### Bugs to Fix:
 - [ ] Use Cordova file plugin to save the images to be reloaded at a later time
+- [ ] Fix cordova splashscreen delay, will autohide isntantly instead of displaying for 5 seconds
 
 #### Code:
 - [ ] move home button to top bar of the app on the details page (use the case switch to rewrite the button at the top depending on which page user navs to)
