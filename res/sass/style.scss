@@ -24,6 +24,9 @@ header{
         position: absolute;
         left: 3vw;
     }
+    h2{
+        margin-right: 3vw;
+    }
 }
 
 //starting of steve simple spa demo stylings
@@ -112,8 +115,9 @@ main {
         }
         .rating{
             @include center(row);
-           p{
-            padding: 0.5em;
+            p{
+                color: $star-colour;
+                padding: 0.5em;
            }
         }
     }
