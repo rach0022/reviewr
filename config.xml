@@ -51,7 +51,7 @@
         <splash src="res/screen/ios/reviewr_splash-default-736h-landscape.png" width="2208" height="1242"/>
         <splash src="res/screen/ios/reviewr_splash-default-736h-landscape@2x.png" width="2668" height="2484"/>
         <splash src="res/screen/ios/reviewr_splash-default-736h-landscape@3x.png" width="6624" height="3726"/>
-        <preference name="SplashScreenDelay" value="10000" />
+        
 
 
         <!-- start of icon definitions  -->
@@ -64,6 +64,8 @@
         <icon src="res/icon/ios/reviewr-icon-80.png" width="80" height="80" />
         <icon src="res/icon/ios/reviewr-icon-80@2x.png" width="160" height="160" />
     </platform>
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="SplashScreenDelay" value="10000" />
     <plugin name="cordova-plugin-camera" spec="^4.1.0">
         <variable name="CAMERA_USAGE_DESCRIPTION" value="To take Pictures for your ReviewR entries" />
         <!-- NSCAMERAUSAGEDESCRIPTION -->
