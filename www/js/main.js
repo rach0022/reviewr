@@ -71,6 +71,7 @@ const reviewr = {
         document.getElementById('fab').addEventListener('click', reviewr.takePhoto);
         document.getElementById('save').addEventListener('click', reviewr.submitReview);
         document.getElementById('cancel').addEventListener('click', reviewr.cancelReview);
+        document.getElementById('retake-pic').addEventListener('click', reviewr.takePhoto);
 
         //init events for other functionalities
         reviewr.stars.starInit();

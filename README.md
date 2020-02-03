@@ -5,11 +5,11 @@
 ### To Do:
 
 #### Bugs to Fix:
-- [x] Find out why I cant reload the old images after uninstalling and reinstalling the app (the locations might just be removed but lets make sure if there is something I can do)
+- [ ] Use Cordova file plugin to save the images to be reloaded at a later time
 
 #### Code:
 - [x] after clicking the photo button the user should be brought to the add review page with the image taken populating the form
-- [ ] find out why after taking an image and saving it into the array it will not give the proper path
+- [x] find out why after taking an image and saving it into the array it will not give the proper path
 - [x] create a div containing all the form elements needed to add a review (1 textfields, submit button and rating system)
 - [x] push any new review object into the array
 - [x] use localstorage.getitem() and localstorage.setitem() to save and reload the array of review json objects
@@ -49,16 +49,16 @@
 ```
 - [x] Use the current timestamp when taking the picture as the id for each item.
 - [x] Clicking on any of the titles will take you to the details page and show the image, title, and rating for the reviewed item.
-- [ ] The home page needs a button in the top bar to add new reviews by taking the user to the Add Page. Follow the Apple HIG when designing and placing this button.
+- [ ] The home page needs a button in the top bar to add new reviews by taking the user to the Add Page. Follow the Apple HIG when designing and placing this button. (button currently on the bottom, move to the top)
 
 #### Details Page:
-- [ ] The image should fill the whole width of the container. The title should be a label for the thing in the picture being reviewed. Use a figure, figcaption, and img element for the picture and title.
+- [x] The image should fill the whole width of the container. The title should be a label for the thing in the picture being reviewed. Use a figure, figcaption, and img element for the picture and title.
 - [x] The rating system needs to be a number between 1 and 5 OR a star rating system displaying 1 to 5 stars. See the video link below as an example for how to create the rating system.
 - [x] There needs to be a delete button which will remove the data from localstorage and return the user to the home page.
 - [ ] There also needs to be a button in the top bar for the user to navigate back to the home screen.
 
 #### Add Page: 
-- [ ] The Add Page should show a button to take the picture. This should always be the first step on this page. Do not show the input or prompt for the title until after the picture is taken.
+- [x] The Add Page should show a button to take the picture. This should always be the first step on this page. Do not show the input or prompt for the title until after the picture is taken. (skipped button, made it go directly to camera)
 - [x] After the picture is taken and displayed (on a canvas or img element) then show the input field for the title and some type of input for the rating (number input or star system).
 - [x] After the picture is taken there should also be a save and a cancel button. The save button will also update localStorage adding the new item. Both buttons will take the user back to the home page.
 
