@@ -81,4 +81,5 @@ $: cordova plugin add cordova-plugin-file
 > ios-sim start --devicetypeid "device, version#fromabove"
 > cordova run ios
 > cordova run ios --target="IPHONE<#>,version"
+> sass res/sass/style.scss:www/css/style.css
 ````

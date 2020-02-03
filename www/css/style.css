@@ -103,7 +103,8 @@ main {
 
 #details figure {
   width: 100%;
-  border: 2px solid #708396; }
+  border: 2px solid #708396;
+  text-align: center; }
   #details figure img {
     width: 100%;
     height: auto; }
