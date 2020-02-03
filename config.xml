@@ -27,6 +27,18 @@
         <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
             <string> To Take Pictures for ReviewR App </string>
         </edit-config>
+        <!-- start of splashscreen definitions  -->
+        <splash src="res/screen/ios/reviewr_splash-default.png" width="320" height="480"/>
+        <splash src="res/screen/ios/reviewr_splash-default@2x.png" width="640" height="960"/>
+        <splash src="res/screen/ios/reviewr_splash-default@3x.png" width="960" height="1440"/>
+        <splash src="res/screen/ios/reviewr_splash-default-portrait.png" width="768" height="1024"/>
+        <splash src="res/screen/ios/reviewr_splash-default-portrait@2x.png" width="1536" height="2048"/>
+        <splash src="res/screen/ios/reviewr_splash-default-portrait@3x.png" width="2304" height="3072"/>
+        <splash src="res/screen/ios/reviewr_splash-default-landscape.png" width="1024" height="768"/>
+        <splash src="res/screen/ios/reviewr_splash-default-landscape@2x.png" width="2048" height="1536"/>
+        <splash src="res/screen/ios/reviewr_splash-default-landscape@3x.png" width="3072" height="2304"/>
+
+
         <!-- start of icon definitions  -->
         <icon src="res/icon/ios/reviewr-icon-40.png" width="40" height="40" />
         <icon src="res/icon/ios/reviewr-icon-40@2x.png" width="80" height="80" />
