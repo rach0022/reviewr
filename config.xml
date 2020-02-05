@@ -63,8 +63,7 @@
         <icon src="res/icon/ios/reviewr-icon-80@2x.png" width="160" height="160" />
 
         <!-- preferences for splashscreen  -->
-        <preference name="SplashScreen" value="splash" />
-        <preference name="AutoHideSplashScreen" value="false" />
+        <preference name="AutoHideSplashScreen" value="true" />
         <preference name="SplashScreenDelay" value="5000" />
     </platform>
     

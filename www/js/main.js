@@ -309,7 +309,7 @@ const reviewr = {
         //set index as whatever the id matches to in the usreREviews array
         //for testing purposes we keep a reference to the removed item and console log it out
         let id = ev.currentTarget.getAttribute('data-id');
-        let index = reviewr.userReviews.findIndex(rev => rev.id === id);
+        let index = reviewr.userReviews.findIndex(rev => rev.id == id);
         let removed = reviewr.userReviews.splice(index, 1);
         console.log(removed);
 
