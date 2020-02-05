@@ -7,6 +7,9 @@
 *{
     color: $light-shade;
 }
+// html{    
+//     background-color: $dark-accent;
+// }
 
 //class selctor to hide elements when needed
 .hidden{
@@ -91,9 +94,13 @@ main {
     figure{
         @include center(column);
         border: 2px solid $dark-accent;
+        background-color: $dark-shade;
+        padding: 1.7em;
+        border-radius: 10px;
         img{
             width: 200px;
             height: auto;
+            border: 2px solid $brand-color;
         }
     }
     .empty-reviews{

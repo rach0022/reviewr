@@ -5,6 +5,10 @@
 ### To Do:
 
 #### Bugs to Fix:
+- [ ] Delete does not delete the right entry, it usually deletes the last or the next one look into why
+- [ ] Stop user from adding a review without a title or set the title with not named
+- [ ] Fix alignment of title in app header when changing screens
+- [ ] Constrain the details page to one fixed page to stop user from scrolling into white space
 - [ ] Use Cordova file plugin to save the images to be reloaded at a later time
 - [ ] Fix cordova splashscreen delay, will autohide isntantly instead of displaying for 5 seconds
 - [x] see why there is content behind the top bar when not on the details page, everything should be cleared out but it seems there are still elements remaining

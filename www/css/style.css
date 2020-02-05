@@ -90,10 +90,14 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 2px solid #708396; }
+  border: 2px solid #708396;
+  background-color: #263242;
+  padding: 1.7em;
+  border-radius: 10px; }
   #home figure img {
     width: 200px;
-    height: auto; }
+    height: auto;
+    border: 2px solid #547D87; }
 #home .empty-reviews {
   text-align: center; }
 
