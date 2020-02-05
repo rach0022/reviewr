@@ -124,13 +124,13 @@ const reviewr = {
                 reviewr.updateTopBar(1);
                 console.log('this is the home page');
                 break;
-            case 'details':
-                reviewr.updateTopBar(null);
-                console.log('this is the detail page');
-                break;
             case 'add-review':
                 reviewr.updateTopBar(2);
                 console.log('this is the add review page');
+                break;
+            case 'details':
+                reviewr.updateTopBar(null);
+                console.log('this is the detail page');
                 break;
         }
     },
