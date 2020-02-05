@@ -30,7 +30,7 @@ const reviewr = {
     
     //this is an object holding all my string values for text for easy fixing
     appTextSource: {
-        welcome: "You Havent Added any Photos, Click the Plus Arrow To Start Your Journey in Reviews",
+        welcome: "You have not added any reviews yet. Please press the button in the bottom left corner to start your ReviewR journey.",
         confirm: "Would You Like to Add Photo?",
         error: "UhOh Something Funky is Happening, I'd Say start Running",
         retrievalIssue: "We are sorry, we could not recover your reviews at this time, click the add button to start adding new reviews",
@@ -211,6 +211,7 @@ const reviewr = {
     //function to build the details page of a single review
     //it will be passed an event object that will have the data-id attribute to link it to a reivew in the user reviews array
     buildDetailPage: ev => {
+        reviewr.getReviews();
         let detail = document.getElementById('details');
         let id = ev.currentTarget.getAttribute('data-id');
         //show the page
@@ -294,8 +295,10 @@ const reviewr = {
 
     //start of functions to add reviews or delete reviews (starting with delete)
     deleteReview: ev =>{
-
-        //first get the id from the button data-id attribute
+        //udpate the reviews array by calling getReviews()
+        reviewr.getReviews();
+        
+        //get the id from the button data-id attribute
         //set index as whatever the id matches to in the usreREviews array
         //for testing purposes we keep a reference to the removed item and console log it out
         let id = ev.currentTarget.getAttribute('data-id');
