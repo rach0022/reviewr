@@ -77,7 +77,7 @@ const reviewr = {
         document.getElementById('fab').addEventListener('click', reviewr.takePhoto);
         document.getElementById('save').addEventListener('click', reviewr.submitReview);
         document.getElementById('cancel').addEventListener('click', reviewr.cancelReview);
-        document.getElementById('retake-pic').addEventListener('click', reviewr.takePhoto);
+        // document.getElementById('retake-pic').addEventListener('click', reviewr.takePhoto);
 
         //init events for other functionalities
         reviewr.stars.starInit();
@@ -115,6 +115,7 @@ const reviewr = {
 
         //use a switch(target) to target page specific details
         //since we need to change the top bar to include a button on details to go back lets add a button or delete it
+        //1  = 
         switch(target){
             default:
                 console.log(reviewr.appTextSource.error);
@@ -128,7 +129,7 @@ const reviewr = {
                 console.log('this is the detail page');
                 break;
             case 'add-review':
-                reviewr.updateTopBar(1);
+                reviewr.updateTopBar(2);
                 console.log('this is the add review page');
                 break;
         }
@@ -420,37 +421,59 @@ const reviewr = {
 
     //update top bar helper function to change the top bar depending on if we want a home button or not
     //will take a true or falsy value to see if we want a home button or not
+    //1 = home, null = normal and 2 = retake camera
     updateTopBar: ifHome =>{
-        if(ifHome){
-            //reset the top bar to just say the title
-            let appHeader = document.querySelector('header')
-            appHeader.innerHTML = "";
-            appHeader.innerHTML = `<h2><i class="fas fa-camera-retro"></i> REVIEWR by <em>RACH0022</em></h2>`;
-        } else {
-            //first clear the top bar
-            let appHeader = document.querySelector('header')
-            appHeader.innerHTML = "";
+        // if(ifHome){
+        let appHeader = document.querySelector('header');
+        let icon = document.createElement('i');
 
-            //then create a button and add that to the header and then append the h2 with the proper text to the top bar
-            let homeBtn = document.createElement('button');
-            homeBtn.classList.add('gohome')
-            let icon = document.createElement('i');
-            let headerText = document.createElement('h2');
-            let italicText = document.createElement('em');
-            italicText.textContent = 'RACH0022';
-            headerText.textContent= `REVIEWR by `;
+        let headerText = document.createElement('h2');
+        let italicText = document.createElement('em');
+        italicText.textContent = 'RACH0022';
+        headerText.textContent= `REVIEWR by `;
+        
+        switch(ifHome){
+            default:
+                console.log(reviewr.appTextSource.error);
+                break;
+            case 1: 
+                //reset the top bar to just say the title
+                appHeader.innerHTML = "";
+                appHeader.innerHTML = `<h2><i class="fas fa-camera-retro"></i> REVIEWR by <em>RACH0022</em></h2>`;
+                break;
+            case 2:
+                //first clear the top bar
+                appHeader.innerHTML = "";
+                let retakePicBtn = document.createElement('button');
+                retakePicBtn.id = 'retake-pic';
+                retakePicBtn.addEventListener('click',reviewr.takePhoto);
+                icon.classList.add('fas', 'fa-camera-retro')
+                
 
-            icon.classList.add('fas', 'fa-home');
+                //now append the elements properly
+                headerText.appendChild(italicText);
+                retakePicBtn.appendChild(icon);
+                appHeader.appendChild(retakePicBtn);
+                appHeader.appendChild(headerText);
+                break;
+            case null:
+                //first clear the top bar
+                appHeader.innerHTML = "";
 
-            //now to append the elements properly
-            headerText.appendChild(italicText);
-            homeBtn.appendChild(icon);
-            appHeader.appendChild(homeBtn);
-            appHeader.appendChild(headerText);
+                //then create a button and add that to the header and then append the h2 with the proper text to the top bar
+                let homeBtn = document.createElement('button');
+                homeBtn.classList.add('gohome')
 
+                icon.classList.add('fas', 'fa-home');
 
-            homeBtn.addEventListener('click', reviewr.navBackToHome);
-        }
+                //now to append the elements properly
+                headerText.appendChild(italicText);
+                homeBtn.appendChild(icon);
+                appHeader.appendChild(homeBtn);
+                appHeader.appendChild(headerText);
+                homeBtn.addEventListener('click', reviewr.navBackToHome);
+                break;
+            }
     }
 
 };
