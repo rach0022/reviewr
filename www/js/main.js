@@ -17,12 +17,12 @@ const reviewr = {
     baseUrl: null,
     stars: stars,
     userReviews: [
-        {
-            id: Date.now(),
-            title: "Test Review",
-            rating: 4,
-            path: '/www/img/testphoto.png'
-        }
+        // {
+        //     id: Date.now(),
+        //     title: "Test Review",
+        //     rating: 4,
+        //     path: '/www/img/testphoto.png'
+        // }
     ],
 
     //key variable used to connect back to the local storage
@@ -355,11 +355,11 @@ const reviewr = {
         let options = {
             quality: 80,
             destinationType: Camera.DestinationType.FILE_URI,
-            sourceType: Camera.PictureSourceType.PHOTOLIBRARY, //for testing using photo library but should be Camera.PictureSourceType.Camera
+            sourceType: Camera.PictureSourceType.Camera, //for testing using photo library but should be Camera.PictureSourceType.Camera TEST: PHOTOLIBRARY
             mediaType: Camera.EncodingType.JPEG,
-            cameraDirection: Camera.Direction.BACK,
-            targetWidth: 500,
-            targetHeight: 500
+            cameraDirection: Camera.Direction.BACK//,
+            // targetWidth: 500,
+            // targetHeight: 500
         };
         navigator.camera.getPicture(reviewr.cameraSuccess, reviewr.cameraFail, options);
     },

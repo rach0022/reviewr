@@ -18,7 +18,7 @@
 //header selector for the top bar
 header{
     width: 100%;
-    min-height: 65px;
+    min-height: 5vh;
     position: fixed;
     top: 0;
     left: 0;
@@ -43,6 +43,7 @@ header{
         margin-right: 3vw;
         text-align: center;
         width: 100%;
+        padding-left: 10px;
     }
 }
 
@@ -73,7 +74,7 @@ main {
     opacity: 0;
     z-index: 1;
     transition: opacity 0.4s linear;
-    padding-top: 10vh;
+    padding-top: 5vh;
     overflow-y: hidden;
 
     //default background color for all pages:
@@ -163,8 +164,15 @@ main {
         }
     }
     button{
+        @include rectangular-wh(40px);
         background-color: $brand-color;
-        @include rectangular-wh(20px);
+        position: relative;
+        top: -15px;
+        i{
+            color: $light-shade;
+            text-align: center;
+            font-size: 1.8em;
+        }
     }
 }
 

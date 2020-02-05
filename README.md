@@ -5,7 +5,7 @@
 ### To Do:
 
 #### Bugs to Fix:
-- [ ] Delete does not delete the right entry, it usually deletes the last or the next one look into why
+- [x] Delete does not delete the right entry, it usually deletes the last or the next one look into why (FOR SOME REASON STARTED WORKING)
 - [x] Stop user from adding a review without a title or set the title with not named
 - [ ] fix message div fucntion to show the message on the screen
 - [ ] Fix alignment of title in app header when changing screens

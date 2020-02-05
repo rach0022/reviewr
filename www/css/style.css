@@ -19,7 +19,7 @@
 
 header {
   width: 100%;
-  min-height: 65px;
+  min-height: 5vh;
   position: fixed;
   top: 0;
   left: 0;
@@ -45,7 +45,8 @@ header {
   header h2 {
     margin-right: 3vw;
     text-align: center;
-    width: 100%; }
+    width: 100%;
+    padding-left: 10px; }
 
 body {
   padding: 0;
@@ -74,7 +75,7 @@ main {
   opacity: 0;
   z-index: 1;
   transition: opacity 0.4s linear;
-  padding-top: 10vh;
+  padding-top: 5vh;
   overflow-y: hidden;
   background-color: #708396; }
 
@@ -159,11 +160,17 @@ main {
     #details figure .information figcaption {
       padding-left: 10px; }
 #details button {
-  background-color: #547D87;
-  height: 20px;
-  width: 52.2px;
+  height: 40px;
+  width: 104.4px;
   border-radius: 3px;
-  border: none; }
+  border: none;
+  background-color: #547D87;
+  position: relative;
+  top: -15px; }
+  #details button i {
+    color: #E8ECEC;
+    text-align: center;
+    font-size: 1.8em; }
 
 #fab {
   font-size: 1.8em;
