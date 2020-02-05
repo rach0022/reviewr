@@ -154,3 +154,30 @@ main {
     @include circular-w-h(100px);
     background-color: $brand-color;
 }
+
+//selector for the message div, might add classes for info error and success later on:
+//taken from class code in mad9014
+#message{
+    position: absolute;
+    top: -30vh;
+    left: -30vw;
+    /* styling for the message div  */
+    border: 3px dashed $light-accent;
+    width: 42vw;
+    height: 20vh;
+    margin-bottom: 10vh;
+    color: $light-shade;
+    text-shadow: $dark-accent 2px 2px 2px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    // display: none;
+    z-index: $active-z_index + 6000;
+}
+
+.info{
+    background-color: $brand-color;
+    top: 30vh;
+    left: 30vw;
+}

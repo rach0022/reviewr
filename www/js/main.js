@@ -34,7 +34,8 @@ const reviewr = {
         confirm: "Would You Like to Add Photo?",
         error: "UhOh Something Funky is Happening, I'd Say start Running",
         retrievalIssue: "We are sorry, we could not recover your reviews at this time, click the add button to start adding new reviews",
-        storageIssue: "We are sorry, we have run out of room to save reviews. Try deleting some reviews before you add a new one."
+        storageIssue: "We are sorry, we have run out of room to save reviews. Try deleting some reviews before you add a new one.",
+        noTitleInput: "You need to Enter Text"
     },
 
     init: () => {
@@ -385,21 +386,29 @@ const reviewr = {
         //first stop the event from preforming default actions or prevent the event from bubbling
         ev.preventDefault();
         ev.stopPropagation();
-        //then get the id, title, rating and image src from the form submission
-        let id = Date.now();
-        let title = document.getElementById('title').value;
-        let rating = document.getElementById('stars').getAttribute('data-rating');
-        let path = document.getElementById('review-image').src; 
+        let userInput = document.getElementById('title').value;
+        if(userInput === ""){
+            //then lets stay on the page and tell the user to input a title
+            // document.getElementById('title').value = "PLEASE ENTER A TITLE";
+            reviewr.showMessage(reviewr.appTextSource.noTitleInput);
+        } else {
+            //then get the id, title, rating and image src from the form submission
+            let id = Date.now();
+            let title = document.getElementById('title').value;
+            let rating = document.getElementById('stars').getAttribute('data-rating');
+            let path = document.getElementById('review-image').src; 
 
-        //now push a new object containing all these properties into the user Reviews Array
-        reviewr.userReviews.push({"id": id, "title": title, "rating": rating, "path": path});
+            //now push a new object containing all these properties into the user Reviews Array
+            reviewr.userReviews.push({"id": id, "title": title, "rating": rating, "path": path});
 
-        //then write the reviews into local storage
-        reviewr.setReviews();
+            //then write the reviews into local storage
+            reviewr.setReviews();
 
-        //now time to rebuild and then show the home page
-        reviewr.buildHomePage();
-        reviewr.navWithoutEvent('home');
+            //now time to rebuild and then show the home page
+            reviewr.buildHomePage();
+            reviewr.navWithoutEvent('home');
+        }
+        
     },
 
     //this is the cancel review callback function for the cancel button on the review page
@@ -458,7 +467,6 @@ const reviewr = {
                 icon.classList.add('fas', 'fa-camera-retro');
                 headerText.textContent= `Add Review`;
                 
-                
 
                 //now append the elements properly
                 // headerText.appendChild(italicText);
@@ -487,6 +495,20 @@ const reviewr = {
                 homeBtn.addEventListener('click', reviewr.navBackToHome);
                 break;
             }
+    },
+
+    //helper fucntion to show a message it is given a message and it will show it on the screen for
+    //3 seconds and then go away
+    showMessage: inputText =>{
+        let msgDiv = document.getElementById('message');
+        let message = document.querySelector('#message p');
+        message.textContent = inputText;
+
+        msgDiv.classList.add('info');
+        setTimeout(() =>{
+            msgDiv.classList.remove('info');
+        }, 3000);
+
     }
 
 };
