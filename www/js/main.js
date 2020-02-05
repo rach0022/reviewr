@@ -112,6 +112,7 @@ const reviewr = {
         window.scrollTo(0,0);
         document.querySelector('.active').classList.remove('active');
         document.querySelector(`#${target}`).classList.add('active');
+        let fab = document.getElementById('fab');
 
         //use a switch(target) to target page specific details
         //since we need to change the top bar to include a button on details to go back lets add a button or delete it
@@ -122,14 +123,17 @@ const reviewr = {
                 break;
             case 'home':
                 reviewr.updateTopBar(1);
+                fab.classList.remove('hidden');
                 console.log('this is the home page');
                 break;
             case 'add-review':
                 reviewr.updateTopBar(2);
+                fab.classList.add('hidden');
                 console.log('this is the add review page');
                 break;
             case 'details':
                 reviewr.updateTopBar(null);
+                fab.classList.add('hidden');
                 console.log('this is the detail page');
                 break;
         }
@@ -446,12 +450,15 @@ const reviewr = {
                 appHeader.innerHTML = "";
                 let retakePicBtn = document.createElement('button');
                 retakePicBtn.id = 'retake-pic';
+                icon.textContent = "Picture";
                 retakePicBtn.addEventListener('click',reviewr.takePhoto);
-                icon.classList.add('fas', 'fa-camera-retro')
+                icon.classList.add('fas', 'fa-camera-retro');
+                headerText.textContent= `Add Review`;
+                
                 
 
                 //now append the elements properly
-                headerText.appendChild(italicText);
+                // headerText.appendChild(italicText);
                 retakePicBtn.appendChild(icon);
                 appHeader.appendChild(retakePicBtn);
                 appHeader.appendChild(headerText);
@@ -462,12 +469,15 @@ const reviewr = {
 
                 //then create a button and add that to the header and then append the h2 with the proper text to the top bar
                 let homeBtn = document.createElement('button');
-                homeBtn.classList.add('gohome')
+                homeBtn.classList.add('gohome');
+                icon.textContent = 'Home';
+                headerText.textContent= `Details`;
+
 
                 icon.classList.add('fas', 'fa-home');
 
                 //now to append the elements properly
-                headerText.appendChild(italicText);
+                // headerText.appendChild(italicText);
                 homeBtn.appendChild(icon);
                 appHeader.appendChild(homeBtn);
                 appHeader.appendChild(headerText);

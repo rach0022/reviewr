@@ -11,3 +11,10 @@
     width: $amount;
     height: $amount;
 }
+
+@mixin rectangular-wh($amount){
+    height: $amount;
+    width: $amount*2.61;
+    border-radius: 3px;
+    border: none;
+}

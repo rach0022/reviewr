@@ -14,6 +14,9 @@
 * {
   color: #E8ECEC; }
 
+.hidden {
+  display: none; }
+
 header {
   width: 100%;
   min-height: 65px;
@@ -27,9 +30,22 @@ header {
   align-items: center;
   color: #E8ECEC;
   background-color: #263242; }
-  header .gohome {
+  header button {
+    height: 40px;
+    width: 104.4px;
+    border-radius: 3px;
+    border: none;
     position: absolute;
-    left: 3vw; }
+    left: 3vw;
+    background-color: #547D87; }
+    header button i {
+      color: #E8ECEC;
+      text-align: center;
+      font-size: 1.8em; }
+  header h2 {
+    margin-right: 3vw;
+    text-align: right;
+    width: 100%; }
 
 body {
   padding: 0;
@@ -114,6 +130,7 @@ main {
     justify-content: center;
     align-items: center; }
     #details figure .rating p {
+      color: #263242;
       padding: 0.5em; }
 
 #fab {

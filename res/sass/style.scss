@@ -7,6 +7,11 @@
 *{
     color: $light-shade;
 }
+
+//class selctor to hide elements when needed
+.hidden{
+    display: none;
+}
 //header selector for the top bar
 header{
     width: 100%;
@@ -20,12 +25,21 @@ header{
     color: $light-shade;
     background-color: $dark-shade;
 
-    .gohome{
+    button{
+        @include rectangular-wh(40px);
         position: absolute;
         left: 3vw;
+        background-color: $brand-color;
+        i{
+            color: $light-shade;
+            text-align: center;
+            font-size: 1.8em;
+        }
     }
     h2{
         margin-right: 3vw;
+        text-align: right;
+        width: 100%;
     }
 }
 
