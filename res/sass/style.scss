@@ -159,6 +159,7 @@ main {
         }
         .information{
             @include center(row);
+            justify-content: space-between;
             figcaption{
                 padding-left: 10px;
             }

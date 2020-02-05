@@ -77,6 +77,7 @@ main {
   transition: opacity 0.4s linear;
   padding-top: 5vh;
   overflow-y: hidden;
+  overflow-x: hidden;
   background-color: #708396; }
 
 .page:last-child {
@@ -156,7 +157,8 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    justify-content: space-between; }
     #details figure .information figcaption {
       padding-left: 10px; }
 #details button {
