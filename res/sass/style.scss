@@ -91,16 +91,29 @@ main {
 //selectors for my pages home add-review and details
 
 #home{
+    width: inherit;
     figure{
         @include center(column);
         border: 2px solid $dark-accent;
         background-color: $dark-shade;
         padding: 1.7em;
         border-radius: 10px;
+        // width: 100%;
         img{
-            width: 200px;
+            width: 250px;
             height: auto;
             border: 2px solid $brand-color;
+            border-radius: 5px;
+        }
+        .detail{
+            width: 100%;
+            @include center(row);
+            font-size: 0.8em;
+            justify-content: space-between;
+            margin-top: 1em;
+            figcaption{
+                padding-left: 10px;
+            }
         }
     }
     .empty-reviews{
@@ -138,9 +151,20 @@ main {
             @include center(row);
             p{
                 color: $star-colour;
-                padding: 0.5em;
+                padding: 0 0.5em 0 0.5em;
            }
+           margin: 0;
         }
+        .information{
+            @include center(row);
+            figcaption{
+                padding-left: 10px;
+            }
+        }
+    }
+    button{
+        background-color: $brand-color;
+        @include rectangular-wh(20px);
     }
 }
 

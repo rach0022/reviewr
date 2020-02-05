@@ -85,21 +85,35 @@ main {
   opacity: 1;
   z-index: 100; }
 
-#home figure {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid #708396;
-  background-color: #263242;
-  padding: 1.7em;
-  border-radius: 10px; }
-  #home figure img {
-    width: 200px;
-    height: auto;
-    border: 2px solid #547D87; }
-#home .empty-reviews {
-  text-align: center; }
+#home {
+  width: inherit; }
+  #home figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #708396;
+    background-color: #263242;
+    padding: 1.7em;
+    border-radius: 10px; }
+    #home figure img {
+      width: 250px;
+      height: auto;
+      border: 2px solid #547D87;
+      border-radius: 5px; }
+    #home figure .detail {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.8em;
+      justify-content: space-between;
+      margin-top: 1em; }
+      #home figure .detail figcaption {
+        padding-left: 10px; }
+  #home .empty-reviews {
+    text-align: center; }
 
 #add-review form {
   display: flex;
@@ -132,10 +146,24 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    margin: 0; }
     #details figure .rating p {
       color: #263242;
-      padding: 0.5em; }
+      padding: 0 0.5em 0 0.5em; }
+  #details figure .information {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; }
+    #details figure .information figcaption {
+      padding-left: 10px; }
+#details button {
+  background-color: #547D87;
+  height: 20px;
+  width: 52.2px;
+  border-radius: 3px;
+  border: none; }
 
 #fab {
   font-size: 1.8em;

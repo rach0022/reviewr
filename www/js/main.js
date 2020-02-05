@@ -181,6 +181,8 @@ const reviewr = {
                 let title = document.createElement('figcaption');
                 let date = document.createElement('figcaption')
                 let img = document.createElement('img');
+                let textDiv = document.createElement('div');
+                textDiv.classList.add('detail');
                 
                 //set the values on the elements
                 img.src = rev.path;
@@ -192,8 +194,9 @@ const reviewr = {
 
                 //append the divs in the proper order and add the listners
                 figure.appendChild(img);
-                figure.appendChild(title);
-                figure.appendChild(date);
+                textDiv.appendChild(title);
+                textDiv.appendChild(date);
+                figure.appendChild(textDiv);
                 reviews.appendChild(figure);
             });
             //append the reviews div after being built to the home div
@@ -235,6 +238,8 @@ const reviewr = {
         if(rev){
             let fig = document.createElement('figure');
             let img = document.createElement('img');
+            let textDiv = document.createElement('div');
+            textDiv.classList.add('information');
             let title = document.createElement('figcaption');
             let date = document.createElement('figcaption');
             let rating = document.createElement('div')
@@ -261,7 +266,7 @@ const reviewr = {
             let icon = document.createElement('i');
             icon.classList.add('fas', 'fa-trash');
             icon.textContent = 'Delete';
-            del_button.setAttribute('data-id', id);
+            del_button.setAttribute('data-id', rev.id);
 
             // //also time to build the back button for the home page
             // let home_button = document.createElement('button');
@@ -275,8 +280,9 @@ const reviewr = {
 
             //append all of the elements in the proper order
             fig.appendChild(img);
-            fig.appendChild(title);
-            fig.appendChild(date);
+            textDiv.appendChild(title);
+            textDiv.appendChild(date);
+            fig.appendChild(textDiv);
             fig.appendChild(rating);
             
             //append all the elements in the appropirate order
@@ -389,8 +395,8 @@ const reviewr = {
         let userInput = document.getElementById('title').value;
         if(userInput === ""){
             //then lets stay on the page and tell the user to input a title
-            // document.getElementById('title').value = "PLEASE ENTER A TITLE";
-            reviewr.showMessage(reviewr.appTextSource.noTitleInput);
+            document.getElementById('title').value = "PLEASE ENTER A TITLE";
+            // reviewr.showMessage(reviewr.appTextSource.noTitleInput);
         } else {
             //then get the id, title, rating and image src from the form submission
             let id = Date.now();
