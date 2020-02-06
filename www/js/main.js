@@ -77,8 +77,8 @@ const reviewr = {
         window.addEventListener('popstate', reviewr.backbutton)
         // document.getElementById('fab').addEventListener('click', reviewr.takePhoto);
         document.getElementById('save').addEventListener('click', reviewr.submitReview);
-        document.getElementById('cancel').addEventListener('click', reviewr.cancelReview);
-        // document.getElementById('retake-pic').addEventListener('click', reviewr.takePhoto);
+        // document.getElementById('cancel').addEventListener('click', reviewr.cancelReview);
+        document.getElementById('retake-pic').addEventListener('click', reviewr.takePhoto);
 
         //init events for other functionalities
         reviewr.stars.starInit();
@@ -356,7 +356,7 @@ const reviewr = {
         let options = {
             quality: 80,
             destinationType: Camera.DestinationType.FILE_URI,
-            sourceType: Camera.PictureSourceType.Camera, //for testing using photo library but should be Camera.PictureSourceType.Camera TEST: PHOTOLIBRARY
+            sourceType: Camera.PictureSourceType.PHOTOLIBRARY, //for testing using photo library but should be Camera.PictureSourceType.Camera TEST: PHOTOLIBRARY
             mediaType: Camera.EncodingType.JPEG,
             cameraDirection: Camera.Direction.BACK//,
             // targetWidth: 500,
@@ -476,18 +476,18 @@ const reviewr = {
             case 2:
                 //first clear the top bar
                 appHeader.innerHTML = "";
-                let retakePicBtn = document.createElement('button');
-                retakePicBtn.id = 'retake-pic';
-                icon.textContent = "Picture";
-                retakePicBtn.addEventListener('click',reviewr.takePhoto);
-                icon.classList.add('fas', 'fa-camera-retro');
+                let cancelBtn = document.createElement('button');
+                cancelBtn.id = 'retake-pic';
+                icon.textContent = "Cancel";
+                cancelBtn.addEventListener('click',reviewr.cancelReview);
+                icon.classList.add('fas', 'fa-trash-alt');
                 headerText.textContent= `Add Review`;
                 
 
                 //now append the elements properly
                 // headerText.appendChild(italicText);
-                retakePicBtn.appendChild(icon);
-                appHeader.appendChild(retakePicBtn);
+                cancelBtn.appendChild(icon);
+                appHeader.appendChild(cancelBtn);
                 appHeader.appendChild(headerText);
                 break;
             case null:

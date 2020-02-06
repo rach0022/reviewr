@@ -5,9 +5,11 @@
 ### To Do:
 #### Demo Results:
 - [x] Move FAB (android button) to top bar main action button
+- [x] Switch Cancel Review button with Retake Photo Button
 - [ ] Increase size of the add-review form
 - [ ] Increase Splashscreen delay (try xcode)
 - [x] Get a Google font for serif (Playfair Display) and sans serif (EXo2)
+    thanks to Mario Ranftl https://google-webfonts-helper.herokuapp.com/fonts
 #### Bugs to Fix:
 - [x] Delete does not delete the right entry, it usually deletes the last or the next one look into why (FOR SOME REASON STARTED WORKING)
 - [x] Stop user from adding a review without a title or set the title with not named
@@ -19,7 +21,7 @@
 - [x] see why there is content behind the top bar when not on the details page, everything should be cleared out but it seems there are still elements remaining
 
 #### Code:
-- [ ] move home button to top bar of the app on the details page (use the case switch to rewrite the button at the top depending on which page user navs to)
+- [x] move home button to top bar of the app on the details page (use the case switch to rewrite the button at the top depending on which page user navs to)
 - [x] after clicking the photo button the user should be brought to the add review page with the image taken populating the form
 - [x] find out why after taking an image and saving it into the array it will not give the proper path
 - [x] create a div containing all the form elements needed to add a review (1 textfields, submit button and rating system)
@@ -62,7 +64,7 @@
 - [x] Use the current timestamp when taking the picture as the id for each item.
 - [x] Clicking on any of the titles will take you to the details page and show the image, title, and rating for the reviewed item.
 - [x] The home page needs a button in the top bar to add new reviews by taking the user to the Add Page. 
-    - [ ] Follow the Apple HIG when designing and placing this button. (button currently on the bottom, move to the top)
+    - [x] Follow the Apple HIG when designing and placing this button. (button currently on the bottom, move to the top)
 
 #### Details Page:
 - [x] The image should fill the whole width of the container. The title should be a label for the thing in the picture being reviewed. Use a figure, figcaption, and img element for the picture and title.
