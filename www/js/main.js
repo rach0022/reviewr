@@ -481,7 +481,7 @@ const reviewr = {
                 appHeader.innerHTML = "";
                 let cancelBtn = document.createElement('button');
                 cancelBtn.id = 'retake-pic';
-                icon.textContent = "Cancel";
+                icon.textContent = "Back";
                 cancelBtn.addEventListener('click',reviewr.cancelReview);
                 icon.classList.add('fas', 'fa-trash-alt');
                 headerText.textContent= `Add Review`;

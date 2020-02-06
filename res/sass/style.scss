@@ -15,20 +15,26 @@ html{
 h1, h2, h3, h4, h5, h6{
     font-family: 'Exo 2', 'serif';
 }
-
 //class selctor to hide elements when needed
 .hidden{
     display: none;
 }
+.home{
+    flex-direction: row-reverse;
+    button{
+        left: -3vw;
+    }
+}
 //header selector for the top bar
 header{
     width: 100%;
-    min-height: 5vh;
+    min-height: 10vh;
     position: fixed;
     top: 0;
     left: 0;
     z-index: $active-z_index + 100;
     @include center(row);
+    // flex-direction: row-reverse;
 
     color: $light-shade;
     background-color: $dark-shade;
@@ -37,8 +43,8 @@ header{
     }
 
     button{
-        @include rectangular-wh(40px);
-        position: absolute;
+        @include rectangular-wh(45px);
+        position: relative;
         left: 3vw;
         background-color: $brand-color;
         i{
@@ -48,12 +54,13 @@ header{
         }
     }
     h2{
-        font-size: 1em;
+        font-size: 1.5rem;
         margin-right: 3vw;
         text-align: center;
         width: 100%;
         padding-left: 10px;
     }
+    
 }
 
 //starting of steve simple spa demo stylings

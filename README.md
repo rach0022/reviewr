@@ -6,19 +6,20 @@
 #### Demo Results:
 - [x] Move FAB (android button) to top bar main action button
 - [x] Switch Cancel Review button with Retake Photo Button
-- [ ] Increase size of the add-review form
-- [ ] Move the Details on the Details page into its own div and overlay ontop of the image (use alpha setting for background)
-- [ ] Increase Splashscreen delay (try xcode)
+- [x] Make the buttons bigger and font more legible for smaller screens in add-review page
+- [x] Increase size of the add-review form
+- [x] Increase the text size of the add-review form text field
+- [x] Move the Details on the Details page into its own div and overlay ontop of the image (use alpha setting for background)
 - [x] Get a Google font for serif (Playfair Display) and sans serif (EXo2)
     thanks to Mario Ranftl https://google-webfonts-helper.herokuapp.com/fonts
 #### Bugs to Fix:
 - [x] Delete does not delete the right entry, it usually deletes the last or the next one look into why (FOR SOME REASON STARTED WORKING)
 - [x] Stop user from adding a review without a title or set the title with not named
-- [ ] get action camera button on home page to go row-reverse for its flex
-- [ ] fix message div fucntion to show the message on the screen
-- [ ] Fix alignment of title in app header when changing screens
-- [ ] Constrain the details page to one fixed page to stop user from scrolling into white space
-- [ ] Use Cordova file plugin to save the images to be reloaded at a later time
+- [x] get action camera button on home page to go row-reverse for its flex
+- [ ](x) fix message div fucntion to show the message on the screen
+- [x] Fix alignment of title in app header when changing screens
+- [x] Constrain the details page to one fixed page to stop user from scrolling into white space
+- [ ](x) Use Cordova file plugin to save the images to be reloaded at a later time
 - [ ] Fix cordova splashscreen delay, will autohide isntantly instead of displaying for 5 seconds
 - [x] see why there is content behind the top bar when not on the details page, everything should be cleared out but it seems there are still elements remaining
 
@@ -31,9 +32,9 @@
 - [x] use localstorage.getitem() and localstorage.setitem() to save and reload the array of review json objects
 - [x] to searlize the array use JSON.stringfy() and JSON.parse()
 - [x] add a button to the add review page to allow the user to retake the photo
-- [ ] finish the css for the app
-- [ ] add an svg loader when saving to the array (display: none to display:block for an svg animation inside a div which we place with positioning absolute)
-- [ ] implement the navigator cleanup: navigator.camera.cleanup(successCallback, errorCallback);
+- [x] finish the css for the app
+- [ ](x) add an svg loader when saving to the array (display: none to display:block for an svg animation inside a div which we place with positioning absolute)
+- [ ](x) implement the navigator cleanup: navigator.camera.cleanup(successCallback, errorCallback);
 
 #### General:
 - [x] Accept invite to Apple Developer Account
