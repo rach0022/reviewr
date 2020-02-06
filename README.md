@@ -7,6 +7,7 @@
 - [x] Move FAB (android button) to top bar main action button
 - [x] Switch Cancel Review button with Retake Photo Button
 - [ ] Increase size of the add-review form
+- [ ] Move the Details on the Details page into its own div and overlay ontop of the image (use alpha setting for background)
 - [ ] Increase Splashscreen delay (try xcode)
 - [x] Get a Google font for serif (Playfair Display) and sans serif (EXo2)
     thanks to Mario Ranftl https://google-webfonts-helper.herokuapp.com/fonts

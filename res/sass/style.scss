@@ -147,6 +147,17 @@ main {
             border-bottom: 2px solid $dark-shade;
         }
     }
+    .formbox{
+        @include center(column);
+        text-align: left;
+        .stars{
+            span{
+                padding: none;
+                margin:  none;
+            }
+            
+        }
+    }
 }
 #details{
     figure{

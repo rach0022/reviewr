@@ -240,6 +240,8 @@ const reviewr = {
             let fig = document.createElement('figure');
             let img = document.createElement('img');
             let textDiv = document.createElement('div');
+            let allDetailsDiv = document.createElement('div');
+            allDetailsDiv.classList.add('specific-details');
             textDiv.classList.add('information');
             let title = document.createElement('figcaption');
             let date = document.createElement('figcaption');
@@ -283,16 +285,17 @@ const reviewr = {
             fig.appendChild(img);
             textDiv.appendChild(title);
             textDiv.appendChild(date);
-            fig.appendChild(textDiv);
-            fig.appendChild(rating);
+            allDetailsDiv.appendChild(textDiv);
+            allDetailsDiv.appendChild(rating);
+            del_button.appendChild(icon);
+            allDetailsDiv.appendChild(del_button);
+            fig.appendChild(allDetailsDiv);
             
             //append all the elements in the appropirate order
             //i want the home button on the top so for now append to top of details then figure then delete button
             // home_button.appendChild(home_icon);
             // detail.appendChild(home_button);
             detail.appendChild(fig);
-            del_button.appendChild(icon);
-            detail.appendChild(del_button);
             
         } else {
             let error = document.createElement('p');

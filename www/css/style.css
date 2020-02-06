@@ -182,6 +182,15 @@ main {
     border-radius: 0;
     color: #263242;
     border-bottom: 2px solid #263242; }
+#add-review .formbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left; }
+  #add-review .formbox .stars span {
+    padding: none;
+    margin: none; }
 
 #details figure {
   width: 100%;
