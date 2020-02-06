@@ -30,7 +30,7 @@ const reviewr = {
     
     //this is an object holding all my string values for text for easy fixing
     appTextSource: {
-        welcome: "You have not added any reviews yet. Please press the button in the bottom left corner to start your ReviewR journey.",
+        welcome: "You have not added any reviews yet. Please press camera button in the top right to begin your ReviewR Journey.",
         confirm: "Would You Like to Add Photo?",
         error: "UhOh Something Funky is Happening, I'd Say start Running",
         retrievalIssue: "We are sorry, we could not recover your reviews at this time, click the add button to start adding new reviews",
@@ -125,17 +125,17 @@ const reviewr = {
                 break;
             case 'home':
                 reviewr.updateTopBar(1);
-                topBar.classList.remove('home');
+                topBar.classList.add('home');
                 console.log('this is the home page');
                 break;
             case 'add-review':
                 reviewr.updateTopBar(2);
-                topBar.classList.add('home');
+                topBar.classList.remove('home');
                 console.log('this is the add review page');
                 break;
             case 'details':
                 reviewr.updateTopBar(null);
-                topBar.classList.add('home');
+                topBar.classList.remove('home');
                 console.log('this is the detail page');
                 break;
         }

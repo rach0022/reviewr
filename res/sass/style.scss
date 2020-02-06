@@ -32,6 +32,9 @@ header{
 
     color: $light-shade;
     background-color: $dark-shade;
+    .home{
+        flex-direction: row-reverse;
+    }
 
     button{
         @include rectangular-wh(40px);
@@ -50,9 +53,6 @@ header{
         text-align: center;
         width: 100%;
         padding-left: 10px;
-    }
-    .home{
-        flex-direction: row-reverse;
     }
 }
 
@@ -181,7 +181,14 @@ main {
             justify-content: space-between;
             figcaption{
                 padding-left: 10px;
+                padding-right: 5px;
             }
+        }
+        .specific-details{
+            width: inherit;
+            position: absolute;
+            top: 70vh;
+            background-color: $dark-accent-alpha;
         }
     }
     button{

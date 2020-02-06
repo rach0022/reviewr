@@ -74,6 +74,8 @@ header {
   align-items: center;
   color: #E8ECEC;
   background-color: #263242; }
+  header .home {
+    flex-direction: row-reverse; }
   header button {
     height: 40px;
     width: 104.4px;
@@ -92,8 +94,6 @@ header {
     text-align: center;
     width: 100%;
     padding-left: 10px; }
-  header .home {
-    flex-direction: row-reverse; }
 
 body {
   padding: 0;
@@ -215,7 +215,13 @@ main {
     align-items: center;
     justify-content: space-between; }
     #details figure .information figcaption {
-      padding-left: 10px; }
+      padding-left: 10px;
+      padding-right: 5px; }
+  #details figure .specific-details {
+    width: inherit;
+    position: absolute;
+    top: 70vh;
+    background-color: #708396AF; }
 #details button {
   height: 40px;
   width: 104.4px;
