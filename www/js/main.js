@@ -75,7 +75,7 @@ const reviewr = {
 
         //handle the back button and set all the other listeners
         window.addEventListener('popstate', reviewr.backbutton)
-        document.getElementById('fab').addEventListener('click', reviewr.takePhoto);
+        // document.getElementById('fab').addEventListener('click', reviewr.takePhoto);
         document.getElementById('save').addEventListener('click', reviewr.submitReview);
         document.getElementById('cancel').addEventListener('click', reviewr.cancelReview);
         // document.getElementById('retake-pic').addEventListener('click', reviewr.takePhoto);
@@ -113,7 +113,8 @@ const reviewr = {
         window.scrollTo(0,0);
         document.querySelector('.active').classList.remove('active');
         document.querySelector(`#${target}`).classList.add('active');
-        let fab = document.getElementById('fab');
+        // let fab = document.getElementById('fab');
+        let topBar = document.querySelector('header');
 
         //use a switch(target) to target page specific details
         //since we need to change the top bar to include a button on details to go back lets add a button or delete it
@@ -124,17 +125,17 @@ const reviewr = {
                 break;
             case 'home':
                 reviewr.updateTopBar(1);
-                fab.classList.remove('hidden');
+                topBar.classList.remove('home');
                 console.log('this is the home page');
                 break;
             case 'add-review':
                 reviewr.updateTopBar(2);
-                fab.classList.add('hidden');
+                topBar.classList.add('home');
                 console.log('this is the add review page');
                 break;
             case 'details':
                 reviewr.updateTopBar(null);
-                fab.classList.add('hidden');
+                topBar.classList.add('home');
                 console.log('this is the detail page');
                 break;
         }
@@ -461,7 +462,16 @@ const reviewr = {
             case 1: 
                 //reset the top bar to just say the title
                 appHeader.innerHTML = "";
-                appHeader.innerHTML = `<h2><i class="fas fa-camera-retro"></i> REVIEWR by <em>RACH0022</em></h2>`;
+                // appHeader.innerHTML = `<h2><i class="fas fa-camera-retro"></i> REVIEWR by <em>RACH0022</em></h2>`; //old method to change the home top header
+                let takePicBtn = document.createElement('button');
+                takePicBtn.addEventListener('click', reviewr.takePhoto);
+                icon.classList.add('fas', 'fa-camera-retro');
+                headerText.textContent = "ReviewR by: Ravi"
+
+                //now to append the elements
+                takePicBtn.appendChild(icon);
+                appHeader.appendChild(takePicBtn);
+                appHeader.appendChild(headerText);
                 break;
             case 2:
                 //first clear the top bar

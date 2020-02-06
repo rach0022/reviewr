@@ -11,3 +11,59 @@ $star-hover: $dark-shade;
 
 //variable for the zindex so i can keep track of everything using zindex
 $active-z_index: 100;
+
+//definitions for the self hosted google fonts
+/* playfair-display-regular - latin */
+@font-face {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./google-fonts/playfair-display-v20-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('./google-fonts/playfair-display-v20-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('./google-fonts/playfair-display-v20-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('./google-fonts/playfair-display-v20-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('./google-fonts/playfair-display-v20-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('./google-fonts/playfair-display-v20-latin-regular.svg#PlayfairDisplay') format('svg'); /* Legacy iOS */
+}
+  
+/* playfair-display-700 - latin */
+@font-face {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./google-fonts/playfair-display-v20-latin-700.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('./google-fonts/playfair-display-v20-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('./google-fonts/playfair-display-v20-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+         url('./google-fonts/playfair-display-v20-latin-700.woff') format('woff'), /* Modern Browsers */
+         url('./google-fonts/playfair-display-v20-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('./google-fonts/playfair-display-v20-latin-700.svg#PlayfairDisplay') format('svg'); /* Legacy iOS */
+}
+/* exo-2-regular - latin */
+@font-face {
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./google-fonts/exo-2-v7-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local('Exo 2 Regular'), local('Exo2-Regular'),
+         url('./google-fonts/exo-2-v7-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('./google-fonts/exo-2-v7-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('./google-fonts/exo-2-v7-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('./google-fonts/exo-2-v7-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('./google-fonts/exo-2-v7-latin-regular.svg#Exo2') format('svg'); /* Legacy iOS */
+}
+
+/* exo-2-700 - latin */
+@font-face {
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./google-fonts/exo-2-v7-latin-700.eot'); /* IE9 Compat Modes */
+    src: local('Exo 2 Bold'), local('Exo2-Bold'),
+         url('./google-fonts/exo-2-v7-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('./google-fonts/exo-2-v7-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+         url('./google-fonts/exo-2-v7-latin-700.woff') format('woff'), /* Modern Browsers */
+         url('./google-fonts/exo-2-v7-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('./google-fonts/exo-2-v7-latin-700.svg#Exo2') format('svg'); /* Legacy iOS */
+}

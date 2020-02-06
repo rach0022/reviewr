@@ -6,10 +6,15 @@
 //default selector for all styles:
 *{
     color: $light-shade;
+    font-family: 'Playfair Display', 'sans-serif'; //setting the base font style
+    overflow-x: hidden;
 }
-// html{    
-//     background-color: $dark-accent;
-// }
+html{    
+    font-size: 16px; //setting the base font size
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Exo 2', 'serif';
+}
 
 //class selctor to hide elements when needed
 .hidden{
@@ -40,10 +45,14 @@ header{
         }
     }
     h2{
+        font-size: 1em;
         margin-right: 3vw;
         text-align: center;
         width: 100%;
         padding-left: 10px;
+    }
+    .home{
+        flex-direction: row-reverse;
     }
 }
 
@@ -76,7 +85,6 @@ main {
     transition: opacity 0.4s linear;
     padding-top: 5vh;
     overflow-y: hidden;
-    overflow-x: hidden;
 
     //default background color for all pages:
     background-color: $dark-accent;

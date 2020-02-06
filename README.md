@@ -3,7 +3,11 @@
 ## Info at: https://prof3ssorst3v3.github.io/mad9022/assignments/cordova2.html
 
 ### To Do:
-
+#### Demo Results:
+- [x] Move FAB (android button) to top bar main action button
+- [ ] Increase size of the add-review form
+- [ ] Increase Splashscreen delay (try xcode)
+- [x] Get a Google font for serif (Playfair Display) and sans serif (EXo2)
 #### Bugs to Fix:
 - [x] Delete does not delete the right entry, it usually deletes the last or the next one look into why (FOR SOME REASON STARTED WORKING)
 - [x] Stop user from adding a review without a title or set the title with not named
