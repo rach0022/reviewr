@@ -133,11 +133,34 @@ main {
 #add-review{
     form{
         @include center(column);
+        position: relative;
+        width: 80%;
+        padding-left: 5px;
         img{
             @include circular-w-h(200px);
+            // @include rectangular-wh(100px)
+        }
+        .btn-box{
+            @include center(row);
+            align-self: space-between;
+            width: 60%;
+            overflow: visible;
         }
         button{
-            @include circular-w-h(60px);
+            overflow: visible;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            background-color: $star-hover;
+            @include circular-w-h(80px);
+            @include center(row);
+            margin-right: 2rem;
+        }
+        label{
+            width: 100%;
+            text-align: left;
+            padding-right: 5vw;
+            margin-bottom: 0.2em;
         }
         input{
             background-color: transparent;
@@ -145,13 +168,31 @@ main {
             border-radius: 0;
             color: $dark-shade;
             border-bottom: 2px solid $dark-shade;
+            width: 80%;
+            font-size: 1.5rem;
+            font-weight: 700;
+            align-self: flex-start;
+            margin-bottom: 1em;
+        }
+        .titlefield{
+            padding: 0;
+            border: 0;
+            margin: 0;
+            width: inherit;
+            display: flex;
+            flex-direction: column;
         }
     }
     .formbox{
+        overflow: visible;
         @include center(column);
         text-align: left;
+        width: 85%;
+        align-items: flex-start;
         .stars{
-            span{
+            @include center(row);
+            align-items: space-around;
+            .star{
                 padding: none;
                 margin:  none;
             }
@@ -187,7 +228,7 @@ main {
         .specific-details{
             width: inherit;
             position: absolute;
-            top: 70vh;
+            top: 62vh;
             background-color: $dark-accent-alpha;
         }
     }

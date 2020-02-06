@@ -14,6 +14,7 @@
 #### Bugs to Fix:
 - [x] Delete does not delete the right entry, it usually deletes the last or the next one look into why (FOR SOME REASON STARTED WORKING)
 - [x] Stop user from adding a review without a title or set the title with not named
+- [ ] get action camera button on home page to go row-reverse for its flex
 - [ ] fix message div fucntion to show the message on the screen
 - [ ] Fix alignment of title in app header when changing screens
 - [ ] Constrain the details page to one fixed page to stop user from scrolling into white space

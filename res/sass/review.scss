@@ -5,7 +5,11 @@
 .star{
     color: $star-colour;
     font-size: 2.0rem;
-    padding: 0 1rem; //space out the stars
+    // padding: 0 0.3rem; //space out the stars
+    // margin: 1rem;
+    padding-right: 0.5em;
+    margin-bottom: 0.5em;
+    overflow: visible;
 
     &::before{
         content: '\2606';
