@@ -359,7 +359,7 @@ const reviewr = {
         let options = {
             quality: 80,
             destinationType: Camera.DestinationType.FILE_URI,
-            sourceType: Camera.PictureSourceType.PHOTOLIBRARY, //for testing using photo library but should be Camera.PictureSourceType.Camera TEST: PHOTOLIBRARY
+            sourceType: Camera.PictureSourceType.Camera, //for testing using photo library but should be Camera.PictureSourceType.Camera TEST: PHOTOLIBRARY
             mediaType: Camera.EncodingType.JPEG,
             cameraDirection: Camera.Direction.BACK//,
             // targetWidth: 500,
